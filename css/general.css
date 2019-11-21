@@ -1,0 +1,700 @@
+body {
+margin: 0; padding: 0;
+font-family: Arial, Helvetica, Verdana, sans-serif; font-size: 0.7em;
+background-color: #F5F5E7;
+color: #000;
+ behavior:  url(csshover.htc);
+}
+
+ul, li, h3, h2, h1, h4, p, h5, form, img, table, tr, td {margin: 0; padding: 0; }
+
+ul, li {
+list-style-type: none; text-decoration: none;}
+
+
+h1 {margin-left: 20px; font-size: 1.4em; padding-bottom: 12px; margin-top: 50px; color: #009999; }
+h1.rig {margin-left: 27px;}
+h1.pages {margin-left: 14px;}
+h1.main {margin-left: 28px; margin-top: 15px; padding-bottom: 4px;}
+h1.refpage {margin-top: 10px; margin-left: 40px; padding-bottom: 20px;}
+.sidebox h3 {font-size: 1em; margin-left: 12px; padding-top: 7px;}
+h2 {margin-left: 29px; font-size: 1.3em; padding-bottom: 3px;}
+h2.alignheader {margin-left: 15px; padding-bottom: 8px; font-size: 1.2em;}
+h2.alignheaderbac {margin-left: 30px; margin-top: 40px; padding-bottom: 8px; font-size: 1.2em;}
+h2.reviewpage {margin-left: 56px;}
+h3 {padding-bottom: 0.4em;}
+h3.moreondexh {padding-bottom: 0; border: 1px solid green;}
+h3.suggest {padding-bottom: 10px; line-height: 1.5em;}
+h4 {margin-left: 28px; padding-top: 5px; padding-bottom: 0em; font-size: 1.1em;}
+
+
+h1.protpages {margin: 0; margin-left: 12px !important; margin-left: 6px; padding: 0; float: left;}
+h1.bacdeah {margin-top: 20px; margin-left: 25px !important; margin-left: 14px; margin-bottom: 0; padding: 0; float: left;}
+/* border in litsearch is needed for IE6 */
+#litsearch {margin: 0; padding: 0;}
+#litbutton {float: right; margin-bottom: 4px; margin-top: 20px; border-bottom: 1px solid #C0C0C0; border-right: 1px solid #C0C0C0; border-left: 1px solid #DEDEDE; border-top: 1px solid #DEDEDE;}
+#litbutton a {background-color: #F9FFD3; padding: 8px; padding-top: 0; padding-bottom: 0;}
+#litbutton.bacbut {float: right; margin-right: 440px; margin-top: 25px; margin-bottom: 4px;}
+#litbutton a {background-color: #F9FFD3; padding: 8px; padding-top: 0; padding-bottom: 0;}
+#revbutton {float: right; margin: 0px 40px 4px auto; border-bottom: 1px solid #C0C0C0; border-right: 1px solid #C0C0C0; border-left: 1px solid #DEDEDE; border-top: 1px solid #DEDEDE; }
+#revbutton a {background-color: #F9FFD3; padding: 8px; padding-top: 0; padding-bottom: 0;}
+
+
+a {text-decoration: none;}
+a:link {color: #333;}
+a:visited {color: #333;}
+a:hover {color: #C96DFF;}
+a:active {color: #C96DFF;}
+
+a.link {text-decoration: none;
+  border-bottom-width: 1px;
+  border-bottom-style: dotted;
+  border-bottom-color: #000000; /* for IE 5, same color as above */
+  font-style: normal; /* for use with dfn */
+}
+
+a:link.title {color: #006767; font-weight: bold;}
+a:visited.title {color: #006767; font-weight: bold;}
+a:hover.title {color: #C96DFF; font-weight: bold;}
+a:active.title {color: #C96DFF; font-weight: bold;}
+
+.litbut {margin-left: 650px; border: 1px solid red;}
+
+
+
+
+.bold {font-weight: bold; color: #333;}
+.italic {font-style: italic;}
+p.clear {clear: both; margin: 0; padding: 0;} 
+p.error {color: #FF0000; margin-left: 100px; margin-top: 60px;}
+#maincontent p {margin-left: 29px; padding-right: 25px; margin-right: 10px;}
+p.standard {margin-left: 29px; padding-bottom: 5px;}
+p.main {margin-top: 5px; margin-bottom: 10px;}
+p.main2 {margin-top: 5px; margin-bottom: 20px; }
+#maincontent p.main3 {margin-top: 10px; margin-right: 40px; padding-right: 40px;}
+p.zusatz {margin-left: 15px;}
+
+/* selected page  */
+#sidebar a.s {color: #C96DFF;}
+
+
+#wrapper {width: 800px; margin: auto; background-color: #F5F5E7;}
+
+
+
+img.pfeiltextlink {vertical-align: bottom;}
+img {border: 0;}
+
+img.logo {
+clear: left;
+float: left;
+margin-left: 11px;
+margin-top: 12px;
+margin-bottom: 1px;
+}
+
+#tagline {
+float: right;
+margin-top: 53px;
+margin-right: 3px;
+margin-bottom: 0;
+}
+
+#tagline2 {
+float: right;
+margin-top: 53px;
+margin-bottom: 0;
+margin-right: 8px;
+}
+
+img.headerimages {
+clear: both;
+margin-left: 12px;
+width: 775px; height: 119px;
+}
+
+img.search {
+position: absolute;
+top: 9px;
+left: 525px !important;
+left: 500px;
+}
+
+.gobutton {
+margin-top: 1px;
+}
+
+form.form {
+position: absolute;
+top: 8px;
+left: 640px !important;
+left: 615px;
+}
+
+input.searchtextfield {
+height: 18px !important;
+height: 12px;
+font-size: 10px;
+vertical-align: top;
+margin-top: 1px !important;
+margin-top: 0;
+border: 1px solid blue;
+}
+
+
+
+
+#topnavi {
+float: left;
+margin-bottom: 0;
+margin-top: 10px;
+margin-left: 11px !important;
+margin-left: 6px;
+}
+
+#topnavi ul, #topnavi li {
+float: left;
+}
+
+#topnavi li {
+margin-right: 5px;
+}
+
+#topnavi a {
+background-color: #F9F9F0;
+display: block;
+padding: 3px 10px 3px 10px;
+border: 1px solid #DEDEDE;
+border-bottom: none;
+font-weight: bold;
+width: 4em;
+}
+
+div#nav>ul a {width: auto; display: block;}
+
+#topnavi a.active {
+border: 1px solid #8D4CB2;
+border-bottom: none;
+background-color: #EFEFDA;
+}
+
+
+
+
+
+div#nav {float: left; 
+margin-left: 12px !important;
+margin-left: 6px;
+margin-top: 3px;
+}
+  
+div#nav ul {margin: 0; padding: 0; background: transp;}
+  
+div#nav li {position: relative; list-style: none; margin: 0;
+  float: left; width: 149px; line-height: 1.7em;
+background-color: #F9F9F0;
+border: 1px solid #DEDEDE; margin-right: 5px;
+font-weight: bold;}
+
+div#nav li.ohneborder {border-bottom: 0;}
+  
+div#nav li:hover {background: #FFF;}
+
+/*  div#nav li.submenu {background: url(images/pfeil.gif) 95% 50% no-repeat;} */
+
+div#nav li.submenu:hover {background-color: #F9F9F0;}
+
+div#nav li a {display: block; padding: 0.25em 5px 0.25em 15px;
+  text-decoration: none; width: 125px;}
+  
+div#nav>ul a {width: auto; display: block;}
+
+div#nav ul ul {position: absolute; width: 7em;
+  display: none;}
+  
+/* div#nav ul ul li {border-bottom: 1px solid #CCC;} */
+
+
+
+div#nav li.submenu li.submenu:hover {background-color: #EDD;}
+
+
+
+div#nav ul.level1 li.submenu:hover ul.level2 
+{display:block;}
+
+div#nav ul.level2 {top: 2.2em; left: -1px;}
+  
+
+ul li.ohneborder {border-bottom: 0;}
+
+#nav a.blacklink {color: #000;}
+
+
+
+
+
+
+
+#main {
+clear: left;
+position: relative;
+width: 800px;
+margin: auto;
+background-color: #FFF;
+border: 1px solid #CCC;
+line-height: 1.2em;
+}
+
+/* background: url(images/background_control.gif) no-repeat 0px 0px; */
+/* background: url(layoutgrid.png) no-repeat 0px 0px; */
+
+
+
+
+
+#sidebar {
+float: right;
+width: 212px;
+margin-top: 15px;
+margin-bottom: 50px;
+}
+
+
+
+
+
+/* maincontent styling */
+
+
+#maincontent {
+clear: left;
+float: left;
+width: 584px;
+margin-top: 15px;
+line-height: 1.5em;
+margin-bottom: 50px;
+}
+
+
+
+img.pageheader {margin: 15px auto 4px 51px;}
+img.revheader {margin: 15px auto 0px 51px;}
+
+img.divider {margin-left: 28px; padding-bottom: 7px;}
+
+.indgrafic {margin-left: 15px;}
+#indexmain {margin: 20px 50px 15px 29px; padding-top: 15px; padding-bottom: 0; border: 1px solid #FFF; background-color: #F2F2F2;}
+
+#indexgrafic {line-height: 1.7em; background-color: #F2F2F2; width: 490px;}
+#maincontent p.graficlegend {margin: 10px auto 5px 25px; padding-bottom: 20px;}
+
+
+
+
+
+
+
+
+
+ul.references {margin-left: 29px;}
+ul.references li {padding-bottom: 5px;}
+ul.references span {font-weight: bold;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* sidebox */
+/* use % width here for horiz expandable box */
+
+
+
+.sidebox, .sideboxblue {
+width: 198px;
+max-width: 198px;
+margin:0px auto;
+margin-left: 3px;
+ margin-top: 5px;
+margin-bottom: 10px;
+font-weight: bold;
+}
+
+.boxlessmargintop {
+ margin-top: 10px;
+}
+
+.boxmoremargintop {
+ margin-top: 80px;
+}
+
+img.sidebardivider {
+margin: 0; padding: 0;
+border: 1px solid red;
+}
+
+.sidebox ul, .sideboxblue ul {
+margin-left: 12px;
+margin-right: 10px;
+padding-top: 7px;
+padding-bottom: 7px;
+}
+
+.sideboxblue ul {padding-top: 10px;}
+
+
+.sidebox ul.ullesspaddingtop, .sideboxblue ul.ullesspaddingtop {padding-top: 2px;}
+
+.sidebox li, .sideboxblue li {padding-bottom: 5px;}
+
+.list li {padding-top: 7px;}
+
+.hoverpfeil {background: url(images/hoverpfeil.gif) no-repeat 4% 5%;
+padding-left: 22px;
+}
+
+.sidebox p {margin-left: 12px; padding-bottom: 7px; padding-top: 7px; font-weight: bold; line-height: 1.5em;}
+
+
+
+
+.recommend {
+position: relative;}
+
+img.mega {
+position: absolute;
+top: 10px;
+left: 130px;
+}
+
+
+/* footer and header stay empty */
+/* height-beschraenkung ensures that box won't break if header size increases, but header and p-text will get closer */
+
+
+
+.sidebox .hd .c,
+.sidebox .ft .c {
+ font-size:1px; /* ensure minimum height */
+ height:5px;
+}
+
+.sidebox .ft .c {
+ height:5px;
+}
+
+.sidebox .hd {
+ background:transparent url(images/box_tl.gif) no-repeat 0px 0px;
+}
+
+.sidebox .hd .c {
+ background:transparent url(images/box_tr.gif) no-repeat right 0px;
+}
+
+.sidebox .bd {
+ background:transparent url(images/box_m.gif) repeat-y 0px 0px;
+}
+
+.sidebox .bd .c {
+ background:transparent url(images/box_m.gif) repeat-y right 0px;
+}
+
+.sidebox .ft {
+ background:transparent url(images/box_bl.gif) no-repeat 0px 0px;
+}
+
+.sidebox .ft .c {
+ background:transparent url(images/box_br.gif) no-repeat right 0px; 
+}
+
+/* sidebox for list of proteins */
+
+.sideboxblue .hd .c,
+.sidebox .ft .c {
+ font-size:1px; /* ensure minimum height */
+ height:5px;
+}
+
+.sideboxblue .ft .c {
+ height:5px;
+}
+
+.sideboxblue .hd {
+ background:transparent url(images/bluebox_tl.gif) no-repeat 0px 0px;
+}
+
+.sideboxblue .hd .c {
+ background:transparent url(images/bluebox_tr.gif) no-repeat right 0px;
+}
+
+.sideboxblue .bd {
+ background:transparent url(images/bluebox_m.gif) repeat-y 0px 0px;
+}
+
+.sideboxblue .bd .c {
+ background:transparent url(images/bluebox_m.gif) repeat-y right 0px;
+}
+
+.sideboxblue .ft {
+ background:transparent url(images/bluebox_bl.gif) no-repeat 0px 0px;
+}
+
+.sideboxblue .ft .c {
+ background:transparent url(images/bluebox_br.gif) no-repeat right 0px; 
+}
+
+
+/* alignment */
+
+pre
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+
+
+/* textcolumns */
+
+#columnsleft {
+float: left;
+width: 290px;
+padding-bottom: 30px;
+}
+
+#columnsright {
+float: left;
+width: 290px;
+padding-bottom: 30px;
+}
+
+#columnsleft p {
+margin-left: 29px;
+padding-right: 10px;
+}
+
+#columnsright p {
+margin-left: 5px;
+padding-right: 25px;
+}
+
+.columnmain2 {padding-top: 10px;}
+
+
+/* referral */
+
+#referral {margin-left: 40px;}
+.suggestform {margin-bottom: 20px;}
+#referral p {margin-left: 0; margin-bottom: 5px; padding-bottom: 0;}
+
+
+
+/* review */
+
+ul.reviews {margin: 5px auto 40px 29px;}
+li.reviewitems {padding-top: 20px;}
+#maincontent p.reviewdisclaimer {margin-left: 56px; margin-bottom: 50px;}
+
+/* datab */
+
+ul.datab {margin-left: 56px; margin-top: 10px;}
+li.dataitems {margin-top: 17px;}
+
+
+
+/* sitemap */
+
+#maincontent.wider {width: 750px;}
+#columnsright.siteright {width: 450px;}
+
+ul.sitemap {width: 60%; margin-left: 58px; margin-bottom: 80px;}
+
+ul.sitemap li {font-weight: bold; padding-bottom: 4px; padding-top: 4px;}
+
+ul.sitemap li li {border-bottom: 1px dotted #CCC; font-weight: normal;}
+
+li li.sitemaplast {margin-bottom: 9px;}
+
+.listborder {border-bottom: 1px dotted #CCC;}
+
+ul.sitemapright {width: 70%; margin-left: 20px; margin-top: 0;}
+ul.sitemapright li {font-weight: bold; padding-bottom: 8px; padding-top: 8px;}
+ul.sitemapright li li {border-bottom: 1px dotted #CCC; font-weight: normal;}
+
+ul.sitemapright img {vertical-align: middle;}
+ul.sitemapright li.sitemapfirst {padding-top: 2px;}
+
+
+/* labs */
+
+#labs {width: 500px; margin-left: 46px; margin-bottom: 50px; border-collapse: collapse;}
+#labs th {text-align: left; padding-left: 0; margin-left: 0; background-color: #F6F6F6;}
+#labs td, #labs th {border: 1px solid #ECECEC; padding: 5px 15px 5px 10px; width: 50%;}
+
+/* Easy CSS Tooltip - by Koller Juergen [www.kollermedia.at] */
+#labs a:hover {background:#ffffff; text-decoration:none;} /*BG color is a must for IE6*/
+#labs a.tooltip {padding-left: 2px; padding-right: 2px; margin-left: 2px; color: #330099; text-decoration:none; border-bottom-width: 1px;
+  border-bottom-style: dotted;
+  border-bottom-color: #000000; /* for IE 5, same color as above */
+  font-style: normal; /* for use with dfn */
+}
+#labs a.tooltip span {display:none; padding:2px 3px; margin-left:8px; width:130px;}
+#labs a.tooltip:hover span{display:inline; position:absolute; border:1px solid #cccccc; background:#ffffff; color:#6c6c6c;} 
+
+/* contact */
+
+#contact {background: url(images/contactform_back.gif) no-repeat 0px 0px; 
+height: 400px; width: 605px;
+margin: 65px auto 30px 100px;}
+
+#contact.missing {margin-top: 10px;}
+
+#contactleft {
+float: left;
+width: 243px;
+margin-right: 20px;
+padding-bottom: 30px;
+margin-top: 30px;
+}
+
+#contactright {
+float: left;
+margin-top: 40px;
+width: 315px;
+padding-left: 0px;
+padding-right: 10px;
+padding-bottom: 30px;
+}
+
+#contactleft img {margin-left: 35px;}
+#contactleft img.contactline {margin-left: 23px;}
+#contactleft img.eck {margin-top: 11px;}
+
+#contactleft ul {margin-left: 40px; margin-top: 4px; line-height: 1.6em;}
+#contactleft li.conphone {margin-top: 17px;}
+#contactleft li.coninfo {margin-top: 38px !important; margin-top: 30px; color: #666;}
+
+#contactform form {margin-bottom: 10px;}
+
+p.label {margin-bottom: 3px; margin-top: 8px;}
+
+.contextbox { 
+background: #fff url(images/contactbox.gif) repeat-x top; border: 1px solid #EAEAEA; border-top: 1px solid #CCC; border-left: 1px solid #CCC;
+padding: 2px auto 30px 20px; height: 20px;}
+
+.textbox {
+background: #fff url(images/textbox.gif) repeat-x top; border: 1px solid #EAEAEA; border-top: 1px solid #CCC; border-left: 1px solid #CCC;
+}
+
+
+
+
+#thankyou {background: url(images/thankyou.gif) no-repeat 0px 0px; 
+height: 165px; width: 605px;
+margin: 65px auto 0px 100px;}
+
+p.thankyou {margin-left: 35px; margin-top: 40px; font-size: 1.25em; line-height: 1.8em; color: #007979;}
+p.backtohome {margin-left: 135px; margin-bottom: 50px; padding-top: 0; margin-top: 0;}
+
+
+/* searchpage */
+
+.searchpage {margin: 20px auto 70px 58px;}
+
+
+#footer {
+background: #F5F5E7;
+width: 100%;
+margin: 0;
+}
+
+#footermenu {
+width: 800px;
+height: 27px;
+margin: auto;
+margin-top: 8px;
+background: url(images/footer.gif) no-repeat 0px 0px;
+text-align: center;
+}
+
+#footermenu ul {
+text-align: center;
+margin: auto;
+float: left;
+}
+
+#footermenu li {float: left;
+padding-top: 7px;
+padding-bottom: 3px;
+margin: auto;
+}
+
+#footermenu li.firstlink {
+padding-left: 100px;
+}
+
+#footermenu a {
+padding-left: 20px;
+padding-right: 20px;
+}
+
+#footend {
+clear: left;
+width: 800px;
+margin: auto;
+margin-top: 0;
+font-size: 10px;
+text-align: center;
+}
+
+p.klammer {
+width: 294px;
+height: 80px;
+margin: auto;
+padding-top: 20px;
+color: #666;
+text-align: center;
+}
+
+
+/* alignment part */
+
+.Section1 {margin-left: 15px; margin-top: 0; padding-top: 0;}
+
+.Section2 {margin-left: 30px; margin-top: 0; padding-top: 0; margin-bottom: 50px;}
+
+.Section3 {margin: 0 auto 70px 30px; padding-top: 0;}
+
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Courier New";}
+
+/* error pg */
+
+#errorpage {margin-left: 29px; margin-top: 20px;}
+
+/* search result */
+
+.resultwrapper
+	{width: 70%;
+	}

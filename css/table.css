@@ -1,0 +1,71 @@
+#verteilertable {margin: auto; width: 770px; margin-bottom: 50px; 
+border-bottom: 1px solid #999;}
+
+#verteilertable table {border-collapse: collapse;}
+#firsttable {width: 751px; border: 1px solid #999;  border-bottom: none;}
+#secondarytable {margin-top: 0px; width: 751px; border-left: 1px solid #999; }
+
+#verteilertable.noscroll {border-bottom: none;}
+#verteilertable.noscroll table {border-collapse: collapse;}
+
+#verteilertable.noscroll #firsttable {width: 767px;}
+#verteilertable.noscroll #secondarytable {width: 767px;}
+
+
+#verteilertable.bacterial {width: 505px;}
+#verteilertable.bacterial #firsttable {width: 505px;}
+
+
+
+/* to create external scrollbar for second (data) table */
+
+#zweite {height: 358px; overflow: auto;}
+
+td, th {border: 1px solid #999; padding: 0; margin: 0; text-align: left;}
+
+/* specials */
+
+#firsttable.specials {border: 1px solid #999;}
+#firsttable.specials td, #firsttable.specials th {padding: 8px; padding-left: 15px;}
+
+.noborder {border-bottom: none;}
+.notopborder {border-top: none;}
+.darkborder {border-bottom: 2px solid #999;}
+.whiteborder {border-bottom: 1px solid #FFF;}
+.darkgreyborder {border-bottom: 1px solid #E4E4E4;}
+.greyborder {border-bottom: 1px solid #FFFFE1;}
+.blueborder {border-bottom: 1px solid #F8FFFF;}
+
+.nosideborder {border-left: 0;}
+
+/* 2px border otherwise border does not show up in mozilla firefox */
+
+.leftborder {border-left: 2px solid #999;}
+
+th.nameheader {background: #E4E4E4;}
+td.humanname {height: 2.4em;}
+.names {background-color: #F8FFFF;}
+td.red {background-color: red;}
+.grey {background-color: #FFFFE1;}
+
+th.tableimg {padding:0; margin:0; width: 65px;}
+
+.cellpadding {padding-left: 5px;}
+.padding {padding-left: 12px;}
+
+.marker {text-align: center;}
+
+
+/* content of tablecells with max width copied into same cell of other table to perfectly align columns of both tables */ 
+tr.hidden, tr.hidden th, tr.hidden td {visibility: hidden; line-height: 1px; border-top: none;}
+tr.hidden img {height: 1px;}
+
+
+.legend {margin: 30px auto 150px 10px; line-height: 1.5em;}
+ul.legend li {padding-top: 5px;}
+
+
+
+
+
+
