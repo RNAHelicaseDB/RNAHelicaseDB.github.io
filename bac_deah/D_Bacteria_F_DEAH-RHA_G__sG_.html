@@ -25,6 +25,10 @@
                 background-color: #E7F5F5;
                 font-family: arial;
             }
+            #empty {
+              height: 20px;
+              background-color: #FFFFFF;
+            }
             a {
                 text-decoration: none;
             }
@@ -49,8 +53,8 @@
         </div>
         <table style = "width:100%">
             <tr>
-                <th style = "width: 80px" scope = "col">Organism</th>
-                <th style = "width: 250px" scope = "col">E.Coli</th>
+                <th style = "width: 50px" scope = "col">Organism</th>
+                <th style = "width: 100px" scope = "col">E.Coli</th>
             </tr>
             <tr>
                 <td align="middle" id = "rowname"><b>UniProt ID</b></td>
@@ -91,7 +95,9 @@
                 <td align="middle" id = "rowname"><b>Literature</b></td>
                 <td> </td>
             </tr>
-
+            <tr>
+              <th colspan = 2 id = "empty"></th>
+            </tr>
             <tr>
                 <td align="middle" id = "rowname"><b>UniProt ID</b></td>
                 <td id = "uniprotid">P37024</td>
