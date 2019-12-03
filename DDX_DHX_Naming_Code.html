@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DDX/DHX Naming Code</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <style>
+            table, th, td {
+                table-layout: fixed;
+                border-width: 1px;
+                border-color: #000000;
+                border-style: solid;
+                font-family: arial;
+            }
+            table {
+                border-collapse: collapse;
+            }
+            th {
+                height: 50px;
+                background-color: #ADD8E6;
+                font-family: arial;
+            }
+            #rowname {
+                background-color: #E7F5F5;
+                font-family: arial;
+            }
+            #uniprotid {
+                background-color: #E7F5F5;
+                font-family: arial;
+            }
+            a {
+                text-decoration: none;
+            }
+            a:visited {
+                color: LightSeaGreen;
+            }
+            p {
+                font-family: arial;
+            }
+            p2 {
+                font-family: Courier;
+            }
+            h1 {
+                font-family: arial;
+                font-size: 20px;
+                font-weight: bold;
+                color: LightSeaGreen;
+            }
+            td {
+              padding: 5px;
+              width: 200px;
+            }
+            #myBtn {
+              display: none;
+              position: fixed;
+              bottom: 20px;
+              right: 30px;
+              z-index: 99;
+              font-size: 18px;
+              border: none;
+              outline: none;
+              background-color: red;
+              color: white;
+              cursor: pointer;
+              padding: 15px;
+              border-radius: 4px;
+            }
+            #myBtn:hover {
+              background-color: #555;
+            }
+          </style>
+    </head>
+    <body>
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+      <h1>The DDX / DHX Naming Code</h1>
+      <p>General Rule: DEAD-box proteins are named DDX, all other proteins should be named DHX (1)</p>
+
+      <table style = "width:100%">
+        <tr>
+          <th>Human</th>
+          <th>Yeast</th>
+      		<th>Remarks</th>
+          <th>Family</th>
+        </tr>
+        <tr>
+          <th>DDX1</th>
+          <td align="middle" style="color: grey;">N/E (2)</td>
+          <td align="middle"></td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+        <tr>
+          <th>DDX2A</th>
+          <td align="middle">Tif1p</td>
+          <td align="middle">eIF4A-I</td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+        <tr>
+          <th>DDX2B</th>
+          <td align="middle">Tif2p</td>
+          <td align="middle">eIF4A-II</td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+      	<tr>
+          <th>DDX3X</th>
+          <td align="middle">Ded1p / Dbp1p</td>
+          <td align="middle"></td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+      	<tr>
+          <th>DDX3Y</th>
+          <td align="middle">Ded1p / Dbp1p</td>
+          <td align="middle"></td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+      	<tr>
+          <th>DDX4</th>
+          <td align="middle" style="color: grey;">N/E</td>
+          <td align="middle">Vasa</td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+      	<tr>
+          <th>DDX5</th>
+          <td align="middle">Dbp2p</td>
+          <td align="middle">p68</td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+      	<tr>
+          <th>DDX6</th>
+          <td align="middle">Dhh1p</td>
+          <td align="middle">Rck/p54</td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+      	<tr>
+          <th>DHX8</th>
+          <td align="middle">Prp22p</td>
+          <td align="middle"></td>
+          <td align="middle">DEAH / RHA</td>
+        </tr>
+
+      	<tr>
+          <th>DHX9</th>
+          <td align="middle" style="color: grey;">N/E</td>
+          <td align="middle">RNA helicase A (3)</td>
+          <td align="middle">DEAH / RHA</td>
+        </tr>
+
+      	<tr>
+          <th>DDX10</th>
+          <td align="middle">Dbp4</td>
+          <td align="middle"></td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+        <tr>
+          <th scope="col">DHX11</th>
+          <td align="middle"></td>
+          <td align="middle">no DExH/D protein</td>
+          <td align="middle"></td>
+        </tr>
+
+        <tr>
+          <th scope="col">DHX12</th>
+          <td align="middle"></td>
+          <td align="middle">no DExH/D protein</td>
+          <td align="middle"></td>
+        </tr>
+
+        <tr>
+          <th>DHX13</th>
+          <td align="middle">Ski2p</td>
+          <td align="middle">SkiV2</td>
+          <td align="middle">Ski2-like DExH</td>
+        </tr>
+
+        <tr>
+          <th>DHX15</th>
+          <td align="middle">Prp43p</td>
+          <td align="middle"></td>
+          <td align="middle">DEAH / RHA</td>
+        </tr>
+
+        <tr>
+          <th>DHX16</th>
+          <td align="middle">Prp2p</td>
+          <td align="middle"></td>
+          <td align="middle">DEAH / RHA</td>
+        </tr>
+
+        <tr>
+          <th>DDX17</th>
+          <td align="middle" style="color: grey;">N/E</td>
+          <td align="middle">p72</td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+        <tr>
+          <th>DDX18</th>
+          <td align="middle">Has1p</td>
+          <td align="middle"></td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+        <tr>
+          <th>DDX19</th>
+          <td align="middle">Dbp5p</td>
+          <td align="middle"></td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+        <tr>
+          <th>DDX20</th>
+          <td align="middle" style="color: grey;">N/E</td>
+          <td align="middle">Gemin3</td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+        <tr>
+          <th>DDX21</th>
+          <td align="middle" style="color: grey;">N/E</td>
+          <td align="middle">RH-Gu-&#945;</td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+        <tr>
+          <th>DDX23</th>
+          <td align="middle">Prp28p</td>
+          <td align="middle"></td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+        <tr>
+          <th>DDX24</th>
+          <td align="middle">Mak5p</td>
+          <td align="middle"></td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+        <tr>
+          <th>DDX25</th>
+          <td align="middle">Dbp5p</td>
+          <td align="middle"></td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+        <tr>
+          <th>DDX27</th>
+          <td align="middle">Drs1p</td>
+          <td align="middle"></td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+        <tr>
+          <th>DDX28</th>
+          <td align="middle" style="color: grey;">N/E</td>
+          <td align="middle"></td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+      			 <tr>
+          <th>DHX29</th>
+          <td align="middle">YLR419w</td>
+          <td align="middle"></td>
+          <td align="middle">DEAH / RHA</td>
+        </tr>
+
+      	<tr>
+          <th>DHX30</th>
+          <td align="middle" style="color: grey;">N/E</td>
+          <td align="middle"></td>
+          <td align="middle">DEAH/RHA</td>
+        </tr>
+
+      	<tr>
+          <th>DDX31</th>
+          <td align="middle">Dbp7p</td>
+          <td align="middle"></td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+      	<tr>
+          <th>DHX32</th>
+          <td align="middle">Dhr2p</td>
+          <td align="middle"></td>
+          <td align="middle">DEAH / RHA</td>
+        </tr>
+
+      	<tr>
+          <th>DHX33</th>
+          <td align="middle" style="color: grey;">N/E</td>
+          <td align="middle"></td>
+          <td align="middle">DEAH / RHA</td>
+        </tr>
+
+      	<tr>
+          <th>DHX34</th>
+          <td align="middle" style="color: grey;">N/E</td>
+          <td align="middle"></td>
+          <td align="middle">DEAH / RHA</td>
+        </tr>
+
+      	<tr>
+          <th>DHX35</th>
+          <td align="middle" style="color: grey;">N/E</td>
+          <td align="middle"></td>
+          <td align="middle">DEAH / RHA</td>
+        </tr>
+
+      	<tr>
+          <th>DHX36</th>
+          <td align="middle" style="color: grey;">N/E</td>
+          <td align="middle"></td>
+          <td align="middle">DEAH / RHA</td>
+        </tr>
+
+      	<tr>
+          <th>DHX37</th>
+          <td align="middle">Dhr1p</td>
+          <td align="middle"></td>
+          <td align="middle">DEAH / RHA</td>
+        </tr>
+
+      	<tr>
+          <th>DHX38</th>
+          <td align="middle">Prp16p</td>
+          <td align="middle"></td>
+          <td align="middle">DEAH / RHA</td>
+        </tr>
+
+      	<tr>
+          <th>DDX39</th>
+          <td align="middle">Sub2p</td>
+          <td align="middle"></td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+      	<tr>
+          <th>DHX40</th>
+          <td align="middle" style="color: grey;">N/E</td>
+          <td align="middle"></td>
+          <td align="middle">DEAH / RHA</td>
+        </tr>
+
+      	<tr>
+          <th>DDX41</th>
+          <td align="middle" style="color: grey;">N/E</td>
+          <td align="middle">abstrakt</td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+      	<tr>
+          <th>DDX42</th>
+          <td align="middle" style="color: grey;">N/E</td>
+          <td align="middle">SF3b125</td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+      	<tr>
+          <th>DDX43</th>
+          <td align="middle" style="color: grey;">N/E</td>
+          <td align="middle">HAGE</td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+      	<tr>
+          <th>DDX46</th>
+          <td align="middle">Prp5p</td>
+          <td align="middle"></td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+      	<tr>
+          <th>DDX47</th>
+          <td align="middle">Rrp3p</td>
+          <td align="middle"></td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+      	<tr>
+          <th>DDX48</th>
+          <td align="middle">Fal1p</td>
+          <td align="middle"></td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+      	<tr>
+          <th>DDX49</th>
+          <td align="middle">Dbp8p</td>
+          <td align="middle"></td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+      	<tr>
+          <th>DDX50</th>
+          <td align="middle" style="color: grey;">N/E</td>
+          <td align="middle">RH-Gu-&#946;</td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+      	<tr>
+          <th>DDX51</th>
+          <td align="middle">Dbp6p</td>
+          <td align="middle"></td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+      	<tr>
+          <th>DDX52</th>
+          <td align="middle">Rok1p</td>
+          <td align="middle"></td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+      	<tr>
+          <th>DDX53</th>
+          <td align="middle" style="color: grey;">N/E</td>
+          <td align="middle">CAGE</td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+      	<tr>
+          <th>DDX54</th>
+          <td align="middle">Dbp10p</td>
+          <td align="middle"></td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+      	<tr>
+          <th>DDX55</th>
+          <td align="middle">Sbp4p</td>
+          <td align="middle"></td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+        <tr>
+          <th>DDX56</th>
+          <td align="middle">Dbp9p</td>
+          <td align="middle"></td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+      	<tr>
+          <th>DHX57</th>
+          <td align="middle" style="color: grey;">N/E</td>
+          <td align="middle"></td>
+          <td align="middle">DEAH / RHA</td>
+        </tr>
+
+        <tr>
+          <th>DHX58</th>
+          <td align="middle" style="color: grey;">N/E</td>
+          <td align="middle">RIG-I (4)</td>
+          <td align="middle">RIG-like DExH</td>
+        </tr>
+
+        <tr>
+          <th>DDX59</th>
+          <td align="middle" style="color: grey;">N/E</td>
+          <td align="middle"></td>
+          <td align="middle">DEAD-box</td>
+        </tr>
+
+        <tr>
+          <th>DHX60</th>
+          <td align="middle" style="color: grey;">N/E</td>
+          <td align="middle"></td>
+          <td align="middle">Ski2-like DExH</td>
+        </tr>
+
+
+      </table>
+
+
+      <p>(1) Proteins that should be named DHX are occasionally named DDX. For example see (3), (4).</p>
+      <p>(2) N/E - protein does not exist in S.cerevisiae.</p>
+      <p>(3) DHX9 (RNA helicase A) is often named DDX9.</p>
+      <p>(4) DHX58 (RIG-I) is often named DDX58.</p>
+
+      <script>
+      //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+      // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+
+          // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+      </script>
+
+    </body>
+</html>
