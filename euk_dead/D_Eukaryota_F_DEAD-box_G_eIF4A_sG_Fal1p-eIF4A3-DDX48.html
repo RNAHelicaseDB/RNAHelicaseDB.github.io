@@ -4,6 +4,7 @@
         <title>Eukaryota DEAD-box eIF4A Fal1p, eIF4A3, DDX48</title>
           <style>
             table, th, td {
+                table-layout: fixed;
                 border-width: 1px;
                 border-color: #000000;
                 border-style: solid;
@@ -43,6 +44,9 @@
                 font-weight: bold;
                 color: LightSeaGreen;
             }
+            td {
+              padding: 5px;
+            }
           </style>
     </head>
     <body>
@@ -52,12 +56,12 @@
         </div>
         <table style = "width:100%">
             <tr>
-                <th style = "width: 80px" scope = "col">Organism</th>
-                <th style = "width: 250px" scope = "col">S.Cerevisiae</th>
-                <th style = "width: 250px" scope = "col">C.Elegans</th>
-                <th style = "width: 250px" scope = "col">D.Melanogaster</th>
-                <th style = "width: 250px" scope = "col">M.Musculus</th>
-                <th style = "width: 250px" scope = "col">H.Sapiens</th>
+                <th style = "width: 80px" >Organism</th>
+                <th style = "width: 250px" >S.Cerevisiae</th>
+                <th style = "width: 250px" >C.Elegans</th>
+                <th style = "width: 250px" >D.Melanogaster</th>
+                <th style = "width: 250px" >M.Musculus</th>
+                <th style = "width: 250px" >H.Sapiens</th>
             </tr>
             <tr>
                 <td align="middle" id = "rowname"><b>UniProt ID</b></td>
@@ -70,17 +74,17 @@
 
             <tr>
                 <td align="middle" id = "rowname"><b>Protein</b></td>
-                <td>FAL1, PZC399, YD9335.07, YDR021W, , ATP-dependent RNA helicase FAL1, , Translation initiation factor four A-like protein 1</td>
-                <td>, CELE_F33D11.10, , , , Uncharacterized protein, </td>
-                <td>, CG7483, , , Eukaryotic initiation factor 4A-III, , </td>
-                <td>Eif4a3, , , Ddx48, Eukaryotic initiation factor 4A-III, , Eukaryotic translation initiation factor 4A isoform 3</td>
-                <td>EIF4A3, , , DDX48, KIAA0111, Eukaryotic initiation factor 4A-III, , Nuclear matrix protein 265</td>
+                <td><b>FAL1</b><br>YDR021W</td>
+                <td>F33D11.10</td>
+                <td><b>eIF4A-III</b><br>CG7483</td>
+                <td><b>Eif4a-3</b><br>Ddx48</td>
+                <td><b>EIF4A-3</b><br>DDX48</td>
             </tr>
 
             <tr>
                 <td align="middle" id = "rowname"><b>Localization</b></td>
                 <td></td>
-                <td>catalytic step 2 spliceosome, nucleolus</td>
+                <td>Catalytic step 2 spliceosome<br>Nucleolus</td>
                 <td>Nucleus</td>
                 <td>Nucleus</td>
                 <td>Nucleus</td>
@@ -88,11 +92,11 @@
 
             <tr>
                 <td align="middle" id = "rowname"><b>Process</b></td>
-                <td>maturation of SSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)</td>
+                <td>maturation of SSU-rRNA from tricistronic rRNA transcript</td>
                 <td></td>
                 <td>chromatin organization, exon-exon junction complex assembly, mRNA splicing, via spliceosome, mRNA transport, pole plasm oskar mRNA localization, positive regulation of gene expression, RNA splicing</td>
-                <td>embryonic cranial skeleton morphogenesis, mRNA splicing, via spliceosome, mRNA transport, negative regulation of excitatory postsynaptic potential, negative regulation of gene expression, negative regulation of selenocysteine incorporation, negative regulation of selenocysteine insertion sequence binding, negative regulation of translation, nuclear-transcribed mRNA catabolic process, nonsense-mediated decay, positive regulation of mRNA splicing, via spliceosome, positive regulation of transcription by RNA polymerase II, positive regulation of translation, regulation of alternative mRNA splicing, via spliceosome, regulation of mRNA binding, regulation of translation at postsynapse, modulating synaptic transmission, rRNA processing</td>
-                <td>associative learning, cellular response to brain-derived neurotrophic factor stimulus, cellular response to selenite ion, embryonic cranial skeleton morphogenesis, exploration behavior, mRNA 3'-end processing, mRNA export from nucleus, mRNA splicing, via spliceosome, negative regulation of excitatory postsynaptic potential, negative regulation of selenocysteine incorporation, negative regulation of selenocysteine insertion sequence binding, negative regulation of translation, nuclear-transcribed mRNA catabolic process, nonsense-mediated decay, positive regulation of translation, regulation of translation at postsynapse, modulating synaptic transmission, response to organic cyclic compound, RNA export from nucleus, rRNA processing</td>
+                <td><br>- mRNA splicing, via spliceosome<br>- mRNA transport<br>- nuclear-transcribed mRNA catabolic process, nonsense-mediated decay<br>- positive regulation of mRNA splicing, via spliceosome<br>- positive regulation of transcription by RNA polymerase II<br>- regulation of alternative mRNA splicing, via spliceosome, regulation of mRNA binding<br>- rRNA processing</td>
+                <td>- mRNA 3'-end processing<br>- mRNA export from nucleus<br>- mRNA splicing, via spliceosome<br>- negative regulation of translation<br>- nuclear-transcribed mRNA catabolic process<br>- nonsense-mediated decay<br>- positive regulation of translation, regulation of translation at postsynapse<br>- RNA export from nucleus<br>- rRNA processing</td>
             </tr>
 
             <tr>
@@ -133,7 +137,7 @@
 
         </table>
 
-      <h1 class="alignheader"><br>Group Alignment</h1>
+      <h1 ><br>Group Alignment</h1>
         <p2>Q12099|FAL1_YEAST.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MSFDREEDQKLKFKTSKKLKVSSTFESMNLKDDLLRGIYSYGFEAPSSIQ<br></p2>
         <p2>P38919|IF4A3_HUMAN.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ---------------------------------------------PSAIQ<br></p2>
         <p2>Q91VC3|IF4A3_MOUSE.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ---------------------------------------------PSAIQ<br></p2>
