@@ -4,6 +4,7 @@
         <title>Eukaryota DEAD-box eIF4A eIF4A</title>
           <style>
             table, th, td {
+                table-layout: fixed;
                 border-width: 1px;
                 border-color: #000000;
                 border-style: solid;
@@ -47,6 +48,10 @@
                 font-weight: bold;
                 color: LightSeaGreen;
             }
+            td {
+              padding: 5px;
+              width: 200px;
+            }
           </style>
     </head>
     <body>
@@ -56,12 +61,12 @@
         </div>
         <table style = "width:100%">
             <tr>
-                <th style = "width: 80px" scope = "col">Organism</th>
-                <th style = "width: 250px" scope = "col">S.Cerevisiae</th>
-                <th style = "width: 250px" scope = "col">C.Elegans</th>
-                <th style = "width: 250px" scope = "col">D.Melanogaster</th>
-                <th style = "width: 250px" scope = "col">M.Musculus</th>
-                <th style = "width: 250px" scope = "col">H.Sapiens</th>
+                <th style = "width: 80px">Organism</th>
+                <th style = "width: 150px">S.Cerevisiae</th>
+                <th style = "width: 150px">C.Elegans</th>
+                <th style = "width: 150px">D.Melanogaster</th>
+                <th style = "width: 150px">M.Musculus</th>
+                <th style = "width: 150px" >H.Sapiens</th>
             </tr>
             <tr>
                 <td align="middle" id = "rowname"><b>UniProt ID</b></td>
@@ -74,29 +79,29 @@
 
             <tr>
                 <td align="middle" id = "rowname"><b>Protein</b></td>
-                <td>TIF1, TIF2, , , TIF41A, TIF41B, ATP-dependent RNA helicase eIF4A, , p37</td>
-                <td>inf-1, F57B9.6, , , Eukaryotic initiation factor 4A, , Initiation factor 1</td>
-                <td>eIF4A, CG9075, , eIF-4a, Eukaryotic initiation factor 4A, , ATP-dependent RNA helicase eIF4A</td>
-                <td>Eif4a1, , , Ddx2a, Eif4a, Eukaryotic initiation factor 4A-I, , ATP-dependent RNA helicase eIF4A-1</td>
-                <td>EIF4A1, , , DDX2A, EIF4A, Eukaryotic initiation factor 4A-I, , ATP-dependent RNA helicase eIF4A-1</td>
+                <td><b>TIF1p</b> / YKR059W<br><b>TIF2p</b> / YJL138C</td>
+                <td><b>eIF4A</b> / F57B9.6</td>
+                <td>CG9075</td>
+                <td><b>Eif4a-1</b><br><b>Ddx2a</b></td>
+                <td><b>EIF4A-1</b><br><b>DDX2A</b></td>
             </tr>
 
             <tr>
                 <td align="middle" id = "rowname"><b>Localization</b></td>
                 <td>Cytoplasm</td>
-                <td>cytoplasmic stress granule</td>
+                <td>Cytoplasmic stress granule</td>
                 <td>Cytoplasm</td>
-                <td>cytoplasm</td>
-                <td>cytoplasm, cytosol, eukaryotic translation initiation factor 4F complex, extracellular exosome, membrane</td>
+                <td>Cytoplasm</td>
+                <td>Cytoplasm</td>
             </tr>
 
             <tr>
                 <td align="middle" id = "rowname"><b>Process</b></td>
-                <td>cytoplasmic translational initiation, translational initiation</td>
-                <td>cytoplasmic translational initiation</td>
-                <td>cytoplasmic translational initiation, female germ-line stem cell asymmetric division, germ-line stem cell population maintenance, mitotic cell cycle, negative regulation of BMP signaling pathway, oogenesis, pole cell formation, positive regulation of proteasomal ubiquitin-dependent protein catabolic process, regulation of alternative mRNA splicing, via spliceosome, translational initiation</td>
-                <td>cytoplasmic translational initiation</td>
-                <td>cytoplasmic translational initiation, translational initiation, viral process</td>
+                <td>Translational initiation</td>
+                <td>Translational initiation</td>
+                <td>Translational initiation<br><br>female germ-line stem cell asymmetric division, germ-line stem cell population maintenance, mitotic cell cycle, negative regulation of BMP signaling pathway, oogenesis, pole cell formation, positive regulation of proteasomal ubiquitin-dependent protein catabolic process, regulation of alternative mRNA splicing, via spliceosome, translational initiation</td>
+                <td>Translational initiation</td>
+                <td>Translational initiation<br><br>viral process</td>
             </tr>
 
             <tr>
@@ -151,8 +156,8 @@
                 <td> </td>
                 <td> </td>
                 <td> </td>
-                <td>Eif4a2, , , Ddx2b, Eukaryotic initiation factor 4A-II, , ATP-dependent RNA helicase eIF4A-2</td>
-                <td>EIF4A2, , , DDX2B, EIF4F, Eukaryotic initiation factor 4A-II, , ATP-dependent RNA helicase eIF4A-2</td>
+                <td><b>Eif4a-2</b><br><b>Ddx2b</b></td>
+                <td><b>EIF4A-2</b><br><b>DDX2B</b></td>
             </tr>
 
             <tr>
@@ -160,8 +165,8 @@
                 <td> </td>
                 <td> </td>
                 <td> </td>
-                <td>perinuclear region of cytoplasm</td>
-                <td>cytosol, eukaryotic translation initiation factor 4F complex, perinuclear region of cytoplasm</td>
+                <td>Cytoplasm</td>
+                <td>Cytoplasm</td>
             </tr>
 
             <tr>
@@ -211,7 +216,7 @@
 
         </table>
 
-      <h1 class="alignheader"><br>Group Alignment</h1>
+      <h1 ><br>Group Alignment</h1>
         <p2>sp|P60842|IF4A1_HUMAN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -MSASQDSRSRDNGPDGMEPEGVIESNWNEIVDSFDDMNLSESLLRGIYA<br></p2>
         <p2>sp|P60843|IF4A1_MOUSE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -MSASQDSRSRDNGPDGMEPEGVIESNWNEIVDSFDDMNLSESLLRGIYA<br></p2>
         <p2>Q14240|IF4A2_HUMAN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MSGGSADYNREHGGPEGMDPDGVIESNWNEIVDNFDDMNLKESLLRGIYA<br></p2>
