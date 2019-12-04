@@ -16,6 +16,7 @@ th {
 #rowname {
     background-color: #E7F5F5;
     font-family: arial;
+    word-wrap: normal;
 }
 #uniprotid {
     background-color: #E7F5F5;
