@@ -2,55 +2,11 @@
 <html>
     <head>
         <title>Bacteria DEAD-box  </title>
-          <style>
-            table, th, td {
-                table-layout: fixed;
-                border-width: 1px;
-                border-color: #000000;
-                border-style: solid;
-                font-family: arial;
-            }
-            table {
-                border-collapse: collapse;
-            }
-            th {
-                height: 50px;
-                background-color: #ADD8E6;
-                font-family: arial;
-            }
-            #rowname {
-                background-color: #E7F5F5;
-                font-family: arial;
-            }
-            #uniprotid {
-                background-color: #E7F5F5;
-                font-family: arial;
-            }
-            #empty {
-              height: 20px;
-              background-color: #FFFFFF;
-            }
-            a {
-                text-decoration: none;
-            }
-            a:visited {
-                color: LightSeaGreen;
-            }
-            p {
-                font-family: arial;
-            }
-            p2 {
-                font-family: Courier;
-            }
-            h1 {
-                font-family: arial;
-                font-size: 20px;
-                font-weight: bold;
-                color: LightSeaGreen;
-            }
-          </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="http://rnahelicasedb.github.io/subpages_style.css">
     </head>
     <body>
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
         <div style="clear: both">
           <h1 style="float: left">Bacterial DEAD-box Proteins</a> > </h1>
           <h1 style="float: left"></h1>
@@ -833,6 +789,28 @@
         <p2>O34750|YfmL_Bacsu.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>---------<br></p2>
 
         <p2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br></p2>
+
+        <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+        </script>
 
     </body>
 </html>

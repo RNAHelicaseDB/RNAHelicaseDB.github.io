@@ -2,9 +2,11 @@
 <html>
     <head>
         <title>Eukaryota RIG-I-Like DExH  LGP2</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="http://rnahelicasedb.github.io/subpages_style.css">
     </head>
     <body>
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
         <div style="clear: both">
           <h1 style="float: left"><a href="https://rnahelicasedb.github.io/D_eukaryota_F_RIG-I-Like_DExH_Summary.html">Eukaryotic RIG-I-Like DExH Proteins</a> > </h1>
           <h1 style="float: left">LGP2</h1>
@@ -223,6 +225,28 @@
 
         <p2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         **:**.*::.**:****<br></p2>
+
+        <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+        </script>
 
     </body>
 </html>
