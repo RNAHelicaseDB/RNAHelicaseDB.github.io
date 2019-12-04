@@ -1,561 +1,604 @@
 <!DOCTYPE html>
 
+<html>
+  <head>
+    <title>The RNA Helicase Database - Eukaryotic DEAD-box proteins</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      table, th, td {
+        table-layout: fixed;
+                  border-width: 1px;
+        border-color: #000000;
+        border-style: solid;
+        font-family: arial;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      th {
+        height: 50px;
+        background-color: #CFD4B3;
+        font-family: arial;
+      }
+      #group {
+        background-color: #EBEBEB;
+      }
+      #proteinname {
+        padding: 10px;
+        background-color: #F8FFFF;
+      }
+      #noprotein {
+        background-color: #FFFFE1;
+      }
+      a {
+        text-decoration: none;
+      }
+      p {
+        font-family: arial;
+      }
+      h1 {
+        font-family: arial;
+        font-size: 20px;
+        font-weight: bold;
+        color: LightSeaGreen;
+      }
+      #myBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: red;
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 4px;
+      }
 
-<head>
-  <title>The RNA Helicase Database - Eukaryotic DEAD-box proteins</title>
-  <style>
-    table, th, td {
-      table-layout: fixed;
-                border-width: 1px;
-      border-color: #000000;
-      border-style: solid;
-      font-family: arial;
-    }
-    table {
-      border-collapse: collapse;
-    }
-    th {
-      height: 50px;
-      background-color: #CFD4B3;
-      font-family: arial;
-    }
-    #group {
-      background-color: #EBEBEB;
-    }
-    #proteinname {
-      padding: 10px;
-      background-color: #F8FFFF;
-    }
-    #noprotein {
-      background-color: #FFFFE1;
-    }
-    a {
-      text-decoration: none;
-    }
-    p {
-      font-family: arial;
-    }
-    h1 {
-      font-family: arial;
-      font-size: 20px;
-      font-weight: bold;
-      color: LightSeaGreen;
-    }
-  </style>
-</head>
+      #myBtn:hover {
+        background-color: #555;
+      }
+    </style>
+  </head>
 
-<body>
-  <h1>Eukaryotic DEAD-box Proteins</h1>
-  <table style = "width:100%">
-    <tr>
-      <th style = "width: 150px" >Group</th>
-      <th style = "width: 150px" >Yeast</th>
-      <th style = "width: 150px" >Human</th>
-      <th  class = "tableimg noborder"><img src = "images/tbl_transcr.png" alt = "transcription" style = "width:90px;height:90px"/></th>
-      <th  class = "tableimg noborder"><img src = "images/tbl_splic.png" alt = "pre-mRNA splicing" style = "width:90px;height:90px"/></th>
-      <th  class = "tableimg noborder"><img src = "images/tbl_exp.png" alt = "RNA export" style = "width:90px;height:90px"/></th>
-      <th  class = "tableimg noborder"><img src = "images/tbl_trans.png" alt = "Translation" style = "width:90px;height:90px"/></th>
-      <th  class = "tableimg noborder"><img src = "images/tbl_dcy.png" alt = "RNA decay" style = "width:90px;height:90px"/></th>
-      <th  class = "tableimg noborder"><img src = "images/tbl_rbb.png" alt = "Ribosome biogenesis" style = "width:90px;height:90px"/></th>
-      <th  class = "tableimg noborder"><img src = "images/tbl_mtc.png" alt = "Mitochondrial RNA processing" style = "width:90px;height:90px"/></th>
-      <th  class = "tableimg noborder"><img src = "images/tbl_oth.png" alt ="other functions" style = "width:90px;height:90px"/></th>
-    </tr>
-<!-- eIF4A -->
-    <tr>
-      <th rowspan = "9" id = "group">eIF4A</th>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_eIF4A.html">Tif1p</td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_eIF4A.html">eIF4A-I (DDX2A)</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_eIF4A.html">Tif2p</td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_eIF4A.html">eIF4A-II (DDX2B)</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Fal1p-eIF4A3-DDX48.html">Fal1p</td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Fal1p-eIF4A3-DDX48.html">eIF4A-III (DDX48)</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Dhh1p-RCK-DDX6.html">Dhh1p</td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Dhh1p-RCK-DDX6.html">DDX6 (Rck/p54)</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <td rowspan = "2" align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Dbp5p-DDX19-DDX25.html">Dbp5p</td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Dbp5p-DDX19-DDX25.html">DDX19</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Dbp5p-DDX19-DDX25.html">DDX25</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <td rowspan = "2" align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Sub2p-UAP56-DDX39.html">Sub2p</td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Sub2p-UAP56-DDX39.html">DDX39</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Sub2p-UAP56-DDX39.html">UAP56</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <td align="middle" id = "noprotein"></td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Gemin3-DDX20.html">Gemin3 (DDX20)</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-    </tr>
-<!-- Has1  -->
-    <tr>
-      <th rowspan = "4" id = "group">Has1</th>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Has1p-DDX18.html">Has1p</td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Has1p-DDX18.html">DDX18</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Dbp4p-DDX10.html">Dbp4p</td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Dbp4p-DDX10.html">DDX10</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Spb4p-DDX55.html">Spb4p</td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Spb4p-DDX55.html">DDX55</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Dbp7p-DDX31.html">Dbp7p</td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Dbp7p-DDX31.html">DDX31</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <!-- Rrp3  -->
-    <tr>
-      <th rowspan = "4" id = "group">Rrp3</th>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Rrp3p-DDX47.html">Rrp3p</td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Rrp3p-DDX47.html">DDX47</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Dbp8p-DDX49.html">Dbp8p</td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Dbp8p-DDX49.html">DDX49</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Drs1p-DDX27.html">Drs1p</td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Drs1p-DDX27.html">DDX27</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Dbp10p-DDX54.html">Dbp10p</td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Dbp10p-DDX54.html">DDX54</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <!-- Ded1/p68 -->
-    <tr>
-      <th rowspan = "11" id = "group">Ded1/<br>p68</th>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Dbp3p.html">Dbp3p</td>
-      <td align="middle" id = "noprotein"></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Ded1p-DDX3-Dbp1p.html">Ded1p/Dbp1p</td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Ded1p-DDX3-Dbp1p.html">DDX3Y/DDX3X</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <td align="middle" id = "noprotein"></td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Vasa-DDX4.html">DDX4 (Vasa)</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <td align="middle" id = "noprotein"></td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_DDX53.html">DDX53 (CAGE)</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <td align="middle" id = "noprotein"></td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_DDX43-(HAGE).html">DDX43 (HAGE)</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <td rowspan = "2" align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_p68-72-DDX5-17-Dbp2p.html">Dbp2p</td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_p68-72-DDX5-17-Dbp2p.html">p68 (DDX5)</td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_p68-72-DDX5-17-Dbp2p.html">p72 (DDX17)</td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <td align="middle" id = "noprotein"></td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_DDX42-SF3b125.html">DDX42 (SF3b125)</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Prp28p-DDX23.html">Prp28p</td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Prp28p-DDX23.html">DDX23</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Prp5-DDX46.html">Prp5p</td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Prp5-DDX46.html">DDX46</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <td align="middle" id = "noprotein"></td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Abstrakt-DDX41.html">DDX41 (abstrakt)</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <!-- Dbp9/Dbp6 -->
-    <tr>
-      <th rowspan = "2" id = "group">Dbp9/<br>Dbp6</th>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Dbp9-Dbp6_sG_Dbp9p-DDX56.html">Dbp9p</td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Dbp9-Dbp6_sG_Dbp9p-DDX56.html">DDX56</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Dbp9-Dbp6_sG_Dbp6p-DDX51.html">Dbp6p</td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Dbp9-Dbp6_sG_Dbp6p-DDX51.html">DDX51</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <!-- RH-gu -->
-    <tr>
-      <th rowspan = "2" id = "group">RH-Gu</th>
-      <td rowspan = "2" align="middle" id = "noprotein"></td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_RH-Gu_sG_DDX21-DDX50-RH-Gu.html">RH-Gu-α (DDX21)</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_RH-Gu_sG_DDX21-DDX50-RH-Gu.html">RH-Gu-β (DDX50)</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <!-- miscellaneous -->
-    <tr>
-      <th id = "group"></th>
-      <td align="middle" id = "noprotein"></td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G__sG_DDX1.html">DDX1</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <th id = "group"></th>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Mak5p-DDX24.html">Mak5p</td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Mak5p-DDX24.html">DDX24</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <th id = "group"></th>
-      <td align="middle" id = "noprotein"></td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G__sG_DDX59.html">DDX59</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <th id = "group"></th>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Rok1p-DDX52.html">Rok1p</td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Rok1p-DDX52.html">DDX52</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <th id = "group"></th>
-      <td align="middle" id = "noprotein"></td>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G__sG_DDX28.html">DDX28</td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <th id = "group"></th>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Mss116p.html">Mss116p</td>
-      <td align="middle" id = "noprotein"></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <th id = "group"></th>
-      <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Mrh4p.html">Mrh4p</td>
-      <td align="middle" id = "noprotein"></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
-      <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
-    </tr>
-    <tr>
-      <th style = "width: 80px" >Group</th>
-      <th style = "width: 150px" >Yeast</th>
-      <th style = "width: 150px" >Human</th>
-      <th  class = "tableimg noborder"><img src = "images/tbl_transcr.png" alt = "transcription" style = "width:90px;height:90px"/></th>
-      <th  class = "tableimg noborder"><img src = "images/tbl_splic.png" alt = "pre-mRNA splicing" style = "width:90px;height:90px"/></th>
-      <th  class = "tableimg noborder"><img src = "images/tbl_exp.png" alt = "RNA export" style = "width:90px;height:90px"/></th>
-      <th  class = "tableimg noborder"><img src = "images/tbl_trans.png" alt = "Translation" style = "width:90px;height:90px"/></th>
-      <th  class = "tableimg noborder"><img src = "images/tbl_dcy.png" alt = "RNA decay" style = "width:90px;height:90px"/></th>
-      <th  class = "tableimg noborder"><img src = "images/tbl_rbb.png" alt = "Ribosome biogenesis" style = "width:90px;height:90px"/></th>
-      <th  class = "tableimg noborder"><img src = "images/tbl_mtc.png" alt = "Mitochondrial RNA processing" style = "width:90px;height:90px"/></th>
-      <th  class = "tableimg noborder"><img src = "images/tbl_oth.png" alt ="other functions" style = "width:90px;height:90px"/></th>
-    </tr>
-  </table>
-</body>
+  <body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <h1>Eukaryotic DEAD-box Proteins</h1>
+    <table style = "width:100%">
+      <tr>
+        <th style = "width: 150px" >Group</th>
+        <th style = "width: 150px" >Yeast</th>
+        <th style = "width: 150px" >Human</th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_transcr.png" alt = "transcription" style = "width:90px;height:90px"/></th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_splic.png" alt = "pre-mRNA splicing" style = "width:90px;height:90px"/></th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_exp.png" alt = "RNA export" style = "width:90px;height:90px"/></th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_trans.png" alt = "Translation" style = "width:90px;height:90px"/></th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_dcy.png" alt = "RNA decay" style = "width:90px;height:90px"/></th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_rbb.png" alt = "Ribosome biogenesis" style = "width:90px;height:90px"/></th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_mtc.png" alt = "Mitochondrial RNA processing" style = "width:90px;height:90px"/></th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_oth.png" alt ="other functions" style = "width:90px;height:90px"/></th>
+      </tr>
+  <!-- eIF4A -->
+      <tr>
+        <th rowspan = "9" id = "group">eIF4A</th>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_eIF4A.html">Tif1p</td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_eIF4A.html">eIF4A-I (DDX2A)</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_eIF4A.html">Tif2p</td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_eIF4A.html">eIF4A-II (DDX2B)</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Fal1p-eIF4A3-DDX48.html">Fal1p</td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Fal1p-eIF4A3-DDX48.html">eIF4A-III (DDX48)</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Dhh1p-RCK-DDX6.html">Dhh1p</td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Dhh1p-RCK-DDX6.html">DDX6 (Rck/p54)</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <td rowspan = "2" align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Dbp5p-DDX19-DDX25.html">Dbp5p</td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Dbp5p-DDX19-DDX25.html">DDX19</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Dbp5p-DDX19-DDX25.html">DDX25</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <td rowspan = "2" align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Sub2p-UAP56-DDX39.html">Sub2p</td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Sub2p-UAP56-DDX39.html">DDX39</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Sub2p-UAP56-DDX39.html">UAP56</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <td align="middle" id = "noprotein"></td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Gemin3-DDX20.html">Gemin3 (DDX20)</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+      </tr>
+  <!-- Has1  -->
+      <tr>
+        <th rowspan = "4" id = "group">Has1</th>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Has1p-DDX18.html">Has1p</td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Has1p-DDX18.html">DDX18</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Dbp4p-DDX10.html">Dbp4p</td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Dbp4p-DDX10.html">DDX10</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Spb4p-DDX55.html">Spb4p</td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Spb4p-DDX55.html">DDX55</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Dbp7p-DDX31.html">Dbp7p</td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Dbp7p-DDX31.html">DDX31</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <!-- Rrp3  -->
+      <tr>
+        <th rowspan = "4" id = "group">Rrp3</th>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Rrp3p-DDX47.html">Rrp3p</td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Rrp3p-DDX47.html">DDX47</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Dbp8p-DDX49.html">Dbp8p</td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Dbp8p-DDX49.html">DDX49</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Drs1p-DDX27.html">Drs1p</td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Drs1p-DDX27.html">DDX27</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Dbp10p-DDX54.html">Dbp10p</td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Dbp10p-DDX54.html">DDX54</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <!-- Ded1/p68 -->
+      <tr>
+        <th rowspan = "11" id = "group">Ded1/<br>p68</th>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Dbp3p.html">Dbp3p</td>
+        <td align="middle" id = "noprotein"></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Ded1p-DDX3-Dbp1p.html">Ded1p/Dbp1p</td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Ded1p-DDX3-Dbp1p.html">DDX3Y/DDX3X</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <td align="middle" id = "noprotein"></td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Vasa-DDX4.html">DDX4 (Vasa)</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <td align="middle" id = "noprotein"></td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_DDX53.html">DDX53 (CAGE)</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <td align="middle" id = "noprotein"></td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_DDX43-(HAGE).html">DDX43 (HAGE)</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <td rowspan = "2" align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_p68-72-DDX5-17-Dbp2p.html">Dbp2p</td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_p68-72-DDX5-17-Dbp2p.html">p68 (DDX5)</td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_p68-72-DDX5-17-Dbp2p.html">p72 (DDX17)</td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <td align="middle" id = "noprotein"></td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_DDX42-SF3b125.html">DDX42 (SF3b125)</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Prp28p-DDX23.html">Prp28p</td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Prp28p-DDX23.html">DDX23</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Prp5-DDX46.html">Prp5p</td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Prp5-DDX46.html">DDX46</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <td align="middle" id = "noprotein"></td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Abstrakt-DDX41.html">DDX41 (abstrakt)</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <!-- Dbp9/Dbp6 -->
+      <tr>
+        <th rowspan = "2" id = "group">Dbp9/<br>Dbp6</th>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Dbp9-Dbp6_sG_Dbp9p-DDX56.html">Dbp9p</td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Dbp9-Dbp6_sG_Dbp9p-DDX56.html">DDX56</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Dbp9-Dbp6_sG_Dbp6p-DDX51.html">Dbp6p</td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Dbp9-Dbp6_sG_Dbp6p-DDX51.html">DDX51</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <!-- RH-gu -->
+      <tr>
+        <th rowspan = "2" id = "group">RH-Gu</th>
+        <td rowspan = "2" align="middle" id = "noprotein"></td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_RH-Gu_sG_DDX21-DDX50-RH-Gu.html">RH-Gu-α (DDX21)</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_RH-Gu_sG_DDX21-DDX50-RH-Gu.html">RH-Gu-β (DDX50)</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <!-- miscellaneous -->
+      <tr>
+        <th id = "group"></th>
+        <td align="middle" id = "noprotein"></td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G__sG_DDX1.html">DDX1</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <th id = "group"></th>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Mak5p-DDX24.html">Mak5p</td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Mak5p-DDX24.html">DDX24</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <th id = "group"></th>
+        <td align="middle" id = "noprotein"></td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G__sG_DDX59.html">DDX59</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <th id = "group"></th>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Rok1p-DDX52.html">Rok1p</td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Rok1p-DDX52.html">DDX52</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <th id = "group"></th>
+        <td align="middle" id = "noprotein"></td>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G__sG_DDX28.html">DDX28</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <th id = "group"></th>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Mss116p.html">Mss116p</td>
+        <td align="middle" id = "noprotein"></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <th id = "group"></th>
+        <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Mrh4p.html">Mrh4p</td>
+        <td align="middle" id = "noprotein"></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <th style = "width: 80px" >Group</th>
+        <th style = "width: 150px" >Yeast</th>
+        <th style = "width: 150px" >Human</th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_transcr.png" alt = "transcription" style = "width:90px;height:90px"/></th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_splic.png" alt = "pre-mRNA splicing" style = "width:90px;height:90px"/></th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_exp.png" alt = "RNA export" style = "width:90px;height:90px"/></th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_trans.png" alt = "Translation" style = "width:90px;height:90px"/></th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_dcy.png" alt = "RNA decay" style = "width:90px;height:90px"/></th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_rbb.png" alt = "Ribosome biogenesis" style = "width:90px;height:90px"/></th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_mtc.png" alt = "Mitochondrial RNA processing" style = "width:90px;height:90px"/></th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_oth.png" alt ="other functions" style = "width:90px;height:90px"/></th>
+      </tr>
+    </table>
+    <script>
+    //Get the button
+    var mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
+  </body>
+</html>
