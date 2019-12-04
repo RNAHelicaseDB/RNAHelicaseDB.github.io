@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DDX/DHX Naming Code</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <style>
+            table, th, td {
+                table-layout: fixed;
+                border-width: 1px;
+                border-color: #000000;
+                border-style: solid;
+                font-family: arial;
+            }
+            table {
+                border-collapse: collapse;
+            }
+            th {
+                height: 50px;
+                background-color: #ADD8E6;
+                font-family: arial;
+            }
+            #rowname {
+                background-color: #E0FFFF;
+                font-family: arial;
+            }
+            #uniprotid {
+                background-color: #E7F5F5;
+                font-family: arial;
+            }
+            a {
+                text-decoration: none;
+                color: black;
+                font-weight: bold;
+            }
+            a:visited {
+                color: LightSeaGreen;
+            }
+            a:hover {
+              background:#ffffff; text-decoration:none;
+              }
+            a.tooltip {
+              padding-left: 2px;
+              padding-right: 2px;
+              margin-left: 2px;
+              color: #330099;
+              text-decoration:none;
+              border-bottom-width: 1px;
+              border-bottom-style: dotted;
+              border-bottom-color: #000000;
+              font-style: normal;
+            }
+            a.tooltip span {
+              display:none;
+              padding:2px 3px;
+              margin-left:8px;
+              width:300px;
+            }
+            a.tooltip:hover span{
+              display:inline;
+              position:absolute;
+              border:1px solid #cccccc;
+              background:#ffffff;
+              color:#6c6c6c;
+            }
+            p {
+                font-family: arial;
+            }
+            p2 {
+                font-family: Courier;
+            }
+            h1 {
+                font-family: arial;
+                font-size: 20px;
+                font-weight: bold;
+                color: LightSeaGreen;
+            }
+            td {
+              padding: 5px;
+              width: 200px;
+            }
+            #myBtn {
+              display: none;
+              position: fixed;
+              bottom: 20px;
+              right: 30px;
+              z-index: 99;
+              font-size: 18px;
+              border: none;
+              outline: none;
+              background-color: red;
+              color: white;
+              cursor: pointer;
+              padding: 15px;
+              border-radius: 4px;
+            }
+            #myBtn:hover {
+              background-color: #555;
+            }
+          </style>
+    </head>
+    <body>
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+      <h1>Labs</h1>
+
+      <table style = "width:100%">
+        <tr>
+          <th style = "width: 50px">Labs</th>
+          <th style = "width: 50px">Proteins Studied</th>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://www.sickkids.ca/hscDirectory/personalProfile.asp?pID=4253&sID=7&s=Divisions&ssID=165&ss=Haematopathology">Mohammed Abdelhaleem</a></span>
+            <a href="#" class="tooltip">C<span>Cellular Function</span></a>
+            <br /> Hospital for Sick Children<br />Toronto, Ontario</td>
+          <td align="middle">DHX32</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://www.bioxray.au.dk/research_gra_uk.php">Gregers Rom Anderson</a></span>
+            <a href="#" class="tooltip">S<span>Structure</span>
+            </a><br />University of Arhus<br />Arhus, Denmark</td>
+          <td align="middle">eIF4A-III</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://biology.marquette.edu/faculty/anderson.html">James Anderson</a></span>
+            <a href="#" class="tooltip">C<span>Cellular Function</span>
+            </a><br />Marquette University<br />Milwaukee, WI</td>
+          <td align="middle">Mtr4p</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://info.med.yale.edu/mbb/baserga/">Susan Baserga</a></span>
+            <a href="#" class="tooltip">C<span>Cellular Function</span>
+            </a><br />  Yale University<br />New Haven, CT</td>
+          <td align="middle">DEAD-box proteins in yeast ribosome biogenesis </td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="mailto:Agamemnon.Carpousis@ibcg.biotoul.fr">Agamemnon Carpousis</a></span>
+            <a href="#" class="tooltip">C, M<span>Cellular Function, Mechanism</span>
+            </a><br />CNRS<br />Toulouse, France<br /></td>
+          <td align="middle">RhlB, RhlE</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://www.rnaresearch.org/caprara.htm">Mark Caprara</a></span>
+            <a href="#" class="tooltip">C, M<span>Cellular Function, Mechanism</span>
+            </a><br />Case Western Reserve University<br />Cleveland, OH</td>
+          <td align="middle">Suv3p, Mss116p</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://www.rnaresearch.org/coller.htm">
+            Jeff Coller</a></span>
+            <a href="#" class="tooltip">C<span>Cellular Function</span>
+            </a><br />Case Western Reserve University<br />Cleveland, OH</td>
+          <td align="middle">Dhh1p</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://www.mbb.yale.edu/faculty/pages/delacruz.html">Enrique de la Cruz</a></span>
+            <a href="#" class="tooltip">M<span>Mechanism</span>
+            </a><br />Yale University<br />New Haven, CT</td>
+          <td align="middle">DbpA</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://www.virus.kyoto-u.ac.jp/e/virus/bunshiiden.html">Takashi Fujita</a></span>
+            <a href="#" class="tooltip">C<span>Cellular Function</span>
+            </a><br />Kyoto University<br />Kyoto, Japan</td>
+          <td align="middle">RIG-I, MDA5, LGP2</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://www.dundee.ac.uk/pathology/ffp.htm">Frances Fuller-Pace</a></span>
+            <a href="#" class="tooltip">C<span>Cellular Function</span>
+            </a><br />University of Dundee<br />Dundee, UK</td>
+          <td align="middle">p68, p72, DbpA</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://www.ucsf.edu/guthrie/index.htm">Christine Guthrie</a></span>
+            <a href="#" class="tooltip">C<span>Cellular Function</span>
+            </a><br />UCSF<br />San Francisco, CA</td>
+          <td align="middle">Brr2p, Prp16p</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://www.lmb.uni-muenchen.de/hopfner/welcome.html">Karl-Peter Hopfner</a></span>
+            <a href="#" class="tooltip">M, S<span>Mechanism, Structure</span>
+            </a> <br />Ludwigs-Maximilian University<br />Munich, Germany</td>
+          <td align="middle">RIG-I</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://www.case.edu/med/biochemistry/jankowsky/">Eckhard Jankowsky</a></span>
+            <a href="#" class="tooltip">C, M<span>Cellular Function, Mechanism</span>
+            </a><br />Case Western Reserve University<br />Cleveland, OH</td>
+          <td align="middle">Ded1p, Mss116p, eIF4A, Mtr4p, NPH-II, RIG-I, MDA5, Prp43p</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://www.biozentrum.unibas.ch/personal/klostermeier/">Dagmar Klostermeier</a></span>
+            <a href="#" class="tooltip">M<span>Mechanism</span>
+            </a><br />University of Basel<br />Basel, Switzerland</td>
+          <td align="middle">YxiN</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://hood.icmb.utexas.edu/~lambo/">Alan Lambowitz</a></span>
+            <a href="#" class="tooltip">C, M<span>Cellular Function, Mechanism</span>
+            </a><br />University of Texas at Austin<br />Austin, TX</td>
+          <td align="middle">CYT-19, Mss116p</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://www.medecine.unige.ch/~linder/">Patrick  Linder</a></span>
+            <a href="#" class="tooltip">C, M<span>Cellular Function, Mechanism</span>
+            </a><br />University of Geneva<br />Geneva, Switzerland</td>
+          <td align="middle">DExH/D-box proteins in yeast  </td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://biology.mcgill.ca/faculty/lasko/">Paul Lasko</a></span>
+            <a href="#" class="tooltip">C<span>Cellular Function</span>
+            </a><br />McGill University<br />Montreal, Quebec</td>
+          <td align="middle">Vasa, Belle</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://www.bioc.cam.ac.uk/uto/luisi.html">Ben Luisi</a></span>
+            <a href="#" class="tooltip">M<span>Mechanism</span>
+            </a><br />University of Cambridge<br />Cambridge, UK</td>
+          <td align="middle">RhlB</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://mckaylab.stanford.edu/">David McKay</a></span>
+            <a href="#" class="tooltip">S<span>Structure</span>
+            </a><br />Stanford University<br />Stanford, CA</td>
+          <td align="middle">eIF4A, YxiN</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://www.case.edu/med/biochemistry/faculty/merrick.html">Bill Merrick</a></span>
+            <a href="#" class="tooltip">M<span>Mechanism</span>
+            </a><br />Case Western Reserve University<br />Cleveland, OH</td>
+          <td align="middle">eIF4A</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://www.umassmed.edu/bmp/moore.cfm">Melissa Moore</a></span>
+            <a href="#" class="tooltip">C, M<span>Cellular Function, Mechanism</span>
+            </a><br />University of Massachusetts<br />Waltham, MA</td>
+          <td align="middle">eIF4A-III, eIF4A</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://www.biology.ualberta.ca/faculty/george_owttrim/">George Owtrim</a></span>
+            <a href="#" class="tooltip">C<span>Cellular Function</span>
+            </a><br />University of Alberta<br />Edmonton, Alberta</td>
+          <td align="middle">CrhR, CrhC (Cyanobacterial DEAD-box proteins)</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://www.uams.edu/biochem/Raney.asp">Kevin Raney</a></span>
+            <a href="#" class="tooltip">M<span>Mechanism</span>
+            </a><br />University of Arkansas<br />Little Rock, AK</td>
+          <td align="middle">HCV-NS3</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://www.med.cornell.edu/research/bschwer/index.html">Beate Schwer</a></span>
+            <a href="#" class="tooltip">C, M<span>Cellular Function, Mechanism</span>
+            </a><br />Cornell University<br />New York, NY</td>
+          <td align="middle">Prp16p, Prp22p, Prp43p</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://wwwalt.med-rz.uni-sb.de/med_fak/biochemie/stahl.html">Hans Stahl</a></span>
+            <a href="#" class="tooltip">C, M<span>Cellular Function, Mechanism</span>
+            </a><br />University of the Saarland<br />Homburg, Germany</td>
+          <td align="middle">p68, p72, DDX42</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://staleylab.bsd.uchicago.edu/">Jon Staley</a></span>
+            <a href="#" class="tooltip">C, M<span>Cellular Function, Mechanism</span>
+            </a><br />University of Chicago<br />Chicago, IL</td>
+          <td align="middle">Brr2p, Prp28p, Prp22p, Prp43p</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://homepages.ed.ac.uk/dtoller/index.html">David Tollervey</a></span>
+            <a href="#" class="tooltip">C<span>Cellular Function</span>
+            </a><br />University of Edinburgh<br />Edinburgh, UK</td>
+          <td align="middle">Dbp4p</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://www.umaryland.edu/bmb/faculty/toth.html">Eric Toth</a></span>
+            <a href="#" class="tooltip">M<span>Mechanism</span>
+            </a><br />University of Maryland<br />Baltimore, MD</td>
+          <td align="middle">Mtr4p</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://www.pylelab.org/">Anna Marie Pyle</a></span>
+            <a href="#" class="tooltip">M<span>Mechanism</span>
+            </a><br />Yale University<br />New Haven, CT</td>
+          <td align="middle">HCV-NS3, NPH-II, Mss116p</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://research.cm.utexas.edu/rrussell/">Rick Russell</a></span>
+            <a href="#" class="tooltip">M<span>Mechanism</span>
+            </a><br />University of Texas at Austin<br />Austin, TX</td>
+          <td align="middle">CYT-19, Mss116p</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://www.biochem.northwestern.edu/ibis/faculty/uhlenbeck.htm">Olke Uhlenbeck</a></span>
+            <a href="#" class="tooltip">M<span>Mechanism</span>
+            </a><br />Northwestern University<br />Evanstown, IL</td>
+          <td align="middle">DbpA, YxiN</td>
+        </tr>
+
+        <tr>
+          <td><span class="bold">
+            <a href="http://biomol.uchsc.edu/faculty/ResearchPages/zhaoResearch.html">Rui Zhao</a></span>
+            <a href="#" class="tooltip">M, S<span>Mechanism, Structure</span>
+            </a><br />University of Colorado<br />Denver, CO</td>
+          <td align="middle">UAP56</td>
+        </tr>
+
+      </table>
+
+      <script>
+      //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+      // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+
+          // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+      </script>
+
+    </body>
+</html>
