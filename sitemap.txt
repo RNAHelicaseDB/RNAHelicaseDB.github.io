@@ -1,4 +1,5 @@
-﻿https://rnahelicasedb.github.io/D_eukaryota_F_DEAD-box_Summary.html
+﻿https://rnahelicasedb.github.io/index.html
+https://rnahelicasedb.github.io/D_eukaryota_F_DEAD-box_Summary.html
 https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_eIF4A.html
 https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Fal1p-eIF4A3-DDX48.html
 https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Dhh1p-RCK-DDX6.html
