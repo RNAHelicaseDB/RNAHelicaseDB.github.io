@@ -1,0 +1,405 @@
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<!-- <script type="text/javascript">
+    //
+    //  BEWARE!!
+    //  This is exteremely raw and brute-force approach.
+    //  0 elegancy in coding whatsoever, but it does the job.
+    //  one could make function that looks at 32 binary-coded state....
+    //  but I'm just gonna do it this way because this will work and probably take less time for debugging.
+    //
+    //
+    $(document).ready(function () {
+        $("#speciesFilter, #groupFilter, #proteinFilter, #localizationFilter, #bprocessFilter").on("change", function () {
+            var species = $('#speciesFilter').find("option:selected").val();
+            var group = $('#groupFilter').val();
+            var protein = $('#proteinFilter').val();
+            var localization = $('#localizationFilter').val();
+            var bprocess = $('#bprocessFilter').val();
+            SearchData(species, group, protein, localization, bprocess)
+        });
+    });
+    function SearchData(species, group, protein, localization, bprocess) {
+        // 00000
+        if (species == 'all' && group == '' && protein == '' && localization == '' && bprocess == '') {
+            $('#helicasedb tbody tr').show();
+        }
+        else {
+            $('#helicasedb tbody tr:has(td)').each(function () {
+                var rowSpecies = $.trim($(this).find('td:nth-child(1)').text());
+                var rowGroup = $.trim($(this).find('td:nth-child(2)').text());
+                var rowProtein = $.trim($(this).find('td:nth-child(3)').text());
+                var rowLocalization = $.trim($(this).find('td:nth-child(4)').text());
+                var rowBProcess = $.trim($(this).find('td:nth-child(5)').text());
+
+                // 10000
+                if (species != 'all' && group.toUpperCase() == '' && protein.toUpperCase() == '' && localization.toUpperCase() == '' && bprocess.toUpperCase() == '') {
+                  if (rowSpecies.toUpperCase() == species.toUpperCase()) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 01000
+                else if (species == 'all' && group.toUpperCase() != '' && protein.toUpperCase() == '' && localization.toUpperCase() == '' && bprocess.toUpperCase() == '') {
+                  if (rowGroup.toUpperCase().indexOf(group.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 00100
+                else if (species == 'all' && group.toUpperCase() == '' && protein.toUpperCase() != '' && localization.toUpperCase() == '' && bprocess.toUpperCase() == '') {
+                  if (rowProtein.toUpperCase().indexOf(protein.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 00010
+                else if (species == 'all' && group.toUpperCase() == '' && protein.toUpperCase() == '' && localization.toUpperCase() != '' && bprocess.toUpperCase() == '') {
+                  if (rowLocalization.toUpperCase().indexOf(localization.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 00001
+                else if (species == 'all' && group.toUpperCase() == '' && protein.toUpperCase() == '' && localization.toUpperCase() == '' && bprocess.toUpperCase() != '') {
+                  if (rowBProcess.toUpperCase().indexOf(bprocess.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 10001
+                else if (species != 'all' && group.toUpperCase() == '' && protein.toUpperCase() == '' && localization.toUpperCase() == '' && bprocess.toUpperCase() != '') {
+                  if (rowSpecies.toUpperCase() == species.toUpperCase() && rowBProcess.toUpperCase().indexOf(bprocess.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 10010
+                else if (species != 'all' && group.toUpperCase() == '' && protein.toUpperCase() == '' && localization.toUpperCase() != '' && bprocess.toUpperCase() == '') {
+                  if (rowSpecies.toUpperCase() == species.toUpperCase() && rowLocalization.toUpperCase().indexOf(localization.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 10011
+                else if (species != 'all' && group.toUpperCase() == '' && protein.toUpperCase() == '' && localization.toUpperCase() != '' && bprocess.toUpperCase() != '') {
+                  if (rowSpecies.toUpperCase() == species.toUpperCase() && rowLocalization.toUpperCase().indexOf(localization.toUpperCase()) != -1 && rowBProcess.toUpperCase().indexOf(bprocess.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 10100
+                else if (species != 'all' && group.toUpperCase() == '' && protein.toUpperCase() != '' && localization.toUpperCase() == '' && bprocess.toUpperCase() == '') {
+                  if (rowSpecies.toUpperCase() == species.toUpperCase() && rowProtein.toUpperCase().indexOf(protein.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 10101
+                else if (species != 'all' && group.toUpperCase() == '' && protein.toUpperCase() != '' && localization.toUpperCase() == '' && bprocess.toUpperCase() != '') {
+                  if (rowSpecies.toUpperCase() == species.toUpperCase() && rowProtein.toUpperCase().indexOf(protein.toUpperCase()) != -1 && rowBProcess.toUpperCase().indexOf(bprocess.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 10110
+                else if (species != 'all' && group.toUpperCase() == '' && protein.toUpperCase() != '' && localization.toUpperCase() != '' && bprocess.toUpperCase() == '') {
+                  if (rowSpecies.toUpperCase() == species.toUpperCase() && rowProtein.toUpperCase().indexOf(protein.toUpperCase()) != -1 && rowLocalization.toUpperCase().indexOf(localization.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 10111
+                else if (species != 'all' && group.toUpperCase() == '' && protein.toUpperCase() != '' && localization.toUpperCase() != '' && bprocess.toUpperCase() != '') {
+                  if (rowSpecies.toUpperCase() == species.toUpperCase() && rowProtein.toUpperCase().indexOf(protein.toUpperCase()) != -1 && rowLocalization.toUpperCase().indexOf(localization.toUpperCase()) != -1 && rowBProcess.toUpperCase().indexOf(bprocess.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 11000
+                else if (species != 'all' && group.toUpperCase() != '' && protein.toUpperCase() == '' && localization.toUpperCase() == '' && bprocess.toUpperCase() == '') {
+                  if (rowSpecies.toUpperCase() == species.toUpperCase() && rowGroup.toUpperCase().indexOf(group.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 11001
+                else if (species != 'all' && group.toUpperCase() != '' && protein.toUpperCase() == '' && localization.toUpperCase() == '' && bprocess.toUpperCase() != '') {
+                  if (rowSpecies.toUpperCase() == species.toUpperCase() && rowGroup.toUpperCase().indexOf(group.toUpperCase()) != -1 && rowBProcess.toUpperCase().indexOf(bprocess.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 11010
+                else if (species != 'all' && group.toUpperCase() != '' && protein.toUpperCase() == '' && localization.toUpperCase() != '' && bprocess.toUpperCase() == '') {
+                  if (rowSpecies.toUpperCase() == species.toUpperCase() && rowGroup.toUpperCase().indexOf(group.toUpperCase()) != -1 && rowLocalization.toUpperCase().indexOf(localization.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 11011
+                else if (species != 'all' && group.toUpperCase() != '' && protein.toUpperCase() == '' && localization.toUpperCase() != '' && bprocess.toUpperCase() != '') {
+                  if (rowSpecies.toUpperCase() == species.toUpperCase() && rowGroup.toUpperCase().indexOf(group.toUpperCase()) != -1 && rowLocalization.toUpperCase().indexOf(localization.toUpperCase()) != -1 && rowBProcess.toUpperCase().indexOf(bprocess.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 11100
+                else if (species != 'all' && group.toUpperCase() != '' && protein.toUpperCase() != '' && localization.toUpperCase() == '' && bprocess.toUpperCase() == '') {
+                  if (rowSpecies.toUpperCase() == species.toUpperCase() && rowGroup.toUpperCase().indexOf(group.toUpperCase()) != -1 && rowProtein.toUpperCase().indexOf(protein.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 11101
+                else if (species != 'all' && group.toUpperCase() != '' && protein.toUpperCase() != '' && localization.toUpperCase() == '' && bprocess.toUpperCase() != '') {
+                  if (rowSpecies.toUpperCase() == species.toUpperCase() && rowGroup.toUpperCase().indexOf(group.toUpperCase()) != -1 && rowProtein.toUpperCase().indexOf(protein.toUpperCase()) != -1 && rowBProcess.toUpperCase().indexOf(bprocess.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 11110
+                else if (species != 'all' && group.toUpperCase() != '' && protein.toUpperCase() != '' && localization.toUpperCase() != '' && bprocess.toUpperCase() == '') {
+                  if (rowSpecies.toUpperCase() == species.toUpperCase() && rowGroup.toUpperCase().indexOf(group.toUpperCase()) != -1 && rowProtein.toUpperCase().indexOf(protein.toUpperCase()) != -1 && rowLocalization.toUpperCase().indexOf(localization.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 11111
+                else if (species != 'all' && group.toUpperCase() != '' && protein.toUpperCase() != '' && localization.toUpperCase() != '' && bprocess.toUpperCase() != '') {
+                  if (rowSpecies.toUpperCase() == species.toUpperCase() && rowGroup.toUpperCase().indexOf(group.toUpperCase()) != -1 && rowProtein.toUpperCase().indexOf(protein.toUpperCase()) != -1 && rowLocalization.toUpperCase().indexOf(localization.toUpperCase()) != -1 && rowBProcess.toUpperCase().indexOf(bprocess.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 01001
+                else if (species == 'all' && group.toUpperCase() != '' && protein.toUpperCase() == '' && localization.toUpperCase() == '' && bprocess.toUpperCase() != '') {
+                  if (rowGroup.toUpperCase().indexOf(group.toUpperCase()) != -1 && rowBProcess.toUpperCase().indexOf(bprocess.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 01010
+                else if (species == 'all' && group.toUpperCase() != '' && protein.toUpperCase() == '' && localization.toUpperCase() != '' && bprocess.toUpperCase() == '') {
+                  if (rowGroup.toUpperCase().indexOf(group.toUpperCase()) != -1 && rowLocalization.toUpperCase().indexOf(localization.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 01011
+                else if (species == 'all' && group.toUpperCase() != '' && protein.toUpperCase() == '' && localization.toUpperCase() != '' && bprocess.toUpperCase() != '') {
+                  if (rowGroup.toUpperCase().indexOf(group.toUpperCase()) != -1 && rowLocalization.toUpperCase().indexOf(localization.toUpperCase()) != -1 && rowBProcess.toUpperCase().indexOf(bprocess.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 01100
+                else if (species == 'all' && group.toUpperCase() != '' && protein.toUpperCase() != '' && localization.toUpperCase() == '' && bprocess.toUpperCase() == '') {
+                  if (rowGroup.toUpperCase().indexOf(group.toUpperCase()) != -1 && rowProtein.toUpperCase().indexOf(protein.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 01101
+                else if (species == 'all' && group.toUpperCase() != '' && protein.toUpperCase() != '' && localization.toUpperCase() == '' && bprocess.toUpperCase() != '') {
+                  if (rowGroup.toUpperCase().indexOf(group.toUpperCase()) != -1 && rowProtein.toUpperCase().indexOf(protein.toUpperCase()) != -1 && rowBProcess.toUpperCase().indexOf(bprocess.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 01110
+                else if (species == 'all' && group.toUpperCase() != '' && protein.toUpperCase() != '' && localization.toUpperCase() != '' && bprocess.toUpperCase() == '') {
+                  if (rowGroup.toUpperCase().indexOf(group.toUpperCase()) != -1 && rowProtein.toUpperCase().indexOf(protein.toUpperCase()) != -1 && rowLocalization.toUpperCase().indexOf(localization.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 01111
+                else if (species == 'all' && group.toUpperCase() != '' && protein.toUpperCase() != '' && localization.toUpperCase() != '' && bprocess.toUpperCase() != '') {
+                  if (rowGroup.toUpperCase().indexOf(group.toUpperCase()) != -1 && rowProtein.toUpperCase().indexOf(protein.toUpperCase()) != -1 && rowLocalization.toUpperCase().indexOf(localization.toUpperCase()) != -1 && rowBProcess.toUpperCase().indexOf(bprocess.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 00101
+                else if (species == 'all' && group.toUpperCase() == '' && protein.toUpperCase() != '' && localization.toUpperCase() == '' && bprocess.toUpperCase() != '') {
+                  if (rowProtein.toUpperCase().indexOf(protein.toUpperCase()) != -1 && rowBProcess.toUpperCase().indexOf(bprocess.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 00110
+                else if (species == 'all' && group.toUpperCase() == '' && protein.toUpperCase() != '' && localization.toUpperCase() != '' && bprocess.toUpperCase() == '') {
+                  if (rowProtein.toUpperCase().indexOf(protein.toUpperCase()) != -1 && rowLocalization.toUpperCase().indexOf(localization.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 00111
+                else if (species == 'all' && group.toUpperCase() == '' && protein.toUpperCase() != '' && localization.toUpperCase() != '' && bprocess.toUpperCase() != '') {
+                  if (rowProtein.toUpperCase().indexOf(protein.toUpperCase()) != -1 && rowLocalization.toUpperCase().indexOf(localization.toUpperCase()) != -1 && rowBProcess.toUpperCase().indexOf(bprocess.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+                // 00011
+                else if (species == 'all' && group.toUpperCase() == '' && protein.toUpperCase() == '' && localization.toUpperCase() != '' && bprocess.toUpperCase() != '') {
+                  if (rowLocalization.toUpperCase().indexOf(localization.toUpperCase()) != -1 && rowBProcess.toUpperCase().indexOf(bprocess.toUpperCase()) != -1) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+                }
+            });
+        }
+    }
+</script> -->
+<script type="text/javascript" src="search_filter.js"></script>
+<select class="filter_species" id="speciesFilter">
+    <option value="all">Select Species </option>
+    <option value="S.Cerevisiae">S.Cerevisiae</option>
+    <option value="C.Elegans">C.Elegans</option>
+    <option value="D.Melanogaster">D.Melanogaster</option>
+    <option value="M.Musculus">M.Musculus</option>
+    <option value="H.Sapiens">H.Sapiens</option>
+    <option value="X.Laevis">X.Laevis</option>
+</select>
+<input class="filter_group" id="groupFilter" placeholder='Search Protein Group'>
+<input class="filter_protein" id="proteinFilter" placeholder='Search Protein Name'>
+<input class="filter_localization" id="localizationFilter" placeholder='Search Localization'>
+<input class="filter_bprocess" id="bprocessFilter" placeholder='Search Biological Process'>
+
+
+</input>
+<table style="width: 100%" id="helicasedb" border="1">
+    <tr>
+        <th>Species</th>
+        <th>Group</th>
+        <th>Protein</th>
+        <th>Localization</th>
+        <th>Process</th>
+    </tr>
+    <tbody>
+    <tr>
+      <td>S.Cerevisiae</td>
+      <td>eIF4A</td>
+      <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_eIF4A.html">TIF1p / YKR059W<br>TIF2p / YJL138C</td>
+      <td>Nucleus</td>
+      <td>Translational initiation</td>
+    </tr>
+    <tr>
+      <td>C.Elegans</td>
+      <td>eIF4A</td>
+      <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_eIF4A.html">eIF4A<br>F57B9.6</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>D.Melanogaster</td>
+      <td>eIF4A</td>
+      <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_eIF4A.html">CG9075</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>M.Musculus</td>
+      <td>eIF4A</td>
+      <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_eIF4A.html">Eif4a-1<br>Ddx2a</td>
+      <td>Cytoplasm</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>H.Sapiens</td>
+      <td>eIF4A</td>
+      <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_eIF4A.html">EIF4A-1<br>DDX2A</td>
+      <td>Nucleus</td>
+      <td>Translational initiation</td>
+    </tr>
+    <tr>
+      <td>M.Musculus</td>
+      <td>eIF4A</td>
+      <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_eIF4A.html">Eif4a-2<br>Ddx2b</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>H.Sapiens</td>
+      <td>eIF4B</td>
+      <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_eIF4A.html">EIF4A-2<br>DDX2B</td>
+      <td></td>
+      <td>Translational initiation</td>
+    </tr>
+
+    <tr>
+      <td>S.Cerevisiae</td>
+      <td>Fal1p / eIF4A3 / DDX48</td>
+      <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Fal1p-eIF4A3-DDX48.html">FAL1<br>YDR021W</td>
+      <td>Cytoplasm</td>
+      <td>Ribosome biogenesis</td>
+    </tr>
+    <tr>
+      <td>S.Cerevisiae</td>
+      <td>Fal1p / eIF4A3 / DDX48</td>
+      <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Fal1p-eIF4A3-DDX48.html">FAL2<br>YDR022W</td>
+      <td>Exosome</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>S.Cerevisiae</td>
+      <td>Fal1p / eIF4A3 / DDX48</td>
+      <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Fal1p-eIF4A3-DDX48.html">FAL2<br>YDR022W</td>
+      <td>Golgi</td>
+      <td>RNA Decay</td>
+    </tr>
+    <tr>
+      <td>S.Cerevisiae</td>
+      <td>Fal1p / eIF4A3 / DDX48</td>
+      <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Fal1p-eIF4A3-DDX48.html">FAL2<br>YDR022W</td>
+      <td>Golgi</td>
+      <td>mRNA Processing</td>
+    </tr>
+    <tr>
+      <td>C.Elegans</td>
+      <td>Fal1p / eIF4A3 / DDX48</td>
+      <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Fal1p-eIF4A3-DDX48.html">F33D11.10</td>
+      <td>Cytoplasm</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>D.Melanogaster</td>
+      <td>Fal1p / eIF4A3 / DDX48</td>
+      <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Fal1p-eIF4A3-DDX48.html">eIF4A-III<br>CG7483</td>
+      <td>Nuecleus</td>
+      <td>RNA decay</td>
+    </tr>
+  </tbody>
+</table>
