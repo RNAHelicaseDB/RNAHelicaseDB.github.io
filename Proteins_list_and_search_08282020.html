@@ -26,11 +26,11 @@
       border-style: solid;
       font-family: arial;
       font-size: 12px;
-      padding: 15px
+      /* padding: 15px */
     }
     table.filters td, table.filters tr {
       border-color: #FFFFFF;
-      padding: 15px
+      /* padding: 15px */
     }
     th {
       height: 50px;
@@ -99,7 +99,8 @@
   <body>
     <table class = "filters" width='100%' border='1' style='border-collapse:collapse;'>
       <tr>
-        <td style="text-align: center; vertical-align: middle;">
+        <td>
+        <!-- <td style="text-align: center; vertical-align: middle;"> -->
           <select style="width: 150px;" class="filter_species" id="speciesFilter">
               <option value="all">Select Species </option>
               <option disabled>----------------</option>
@@ -119,16 +120,20 @@
               <option value="Potyviridae">Potyviridae</option>
           </select>
         </td>
-        <td style="text-align: center; vertical-align: middle;">
+        <td>
+        <!-- <td style="text-align: center; vertical-align: middle;"> -->
           <input size = "20" class="filter_group" id="groupFilter" placeholder='Search Protein Group'>
         </td>
-        <td style="text-align: center; vertical-align: middle;">
+        <td>
+        <!-- <td style="text-align: center; vertical-align: middle;"> -->
           <input size = "20" class="filter_protein" id="proteinFilter" placeholder='Search Protein Name'>
         </td>
-        <td style="text-align: center; vertical-align: middle;">
+        <td>
+        <!-- <td style="text-align: center; vertical-align: middle;"> -->
           <input size = "20" class="filter_localization" id="localizationFilter" placeholder='Search Localization'>
         </td>
-        <td style="text-align: center; vertical-align: middle;">
+        <td>
+        <!-- <td style="text-align: center; vertical-align: middle;"> -->
           <input size = "20" class="filter_bprocess" id="bprocessFilter" placeholder='Search Biological Process'>
         </td>
       </tr>
