@@ -9,7 +9,7 @@
     }
     table, th, td {
       table-layout: fixed;
-                border-width: 1px;
+      border-width: 1px;
       border-color: #000000;
       border-style: solid;
       font-family: arial;
@@ -18,6 +18,19 @@
     }
     table {
       border-collapse: collapse;
+    }
+    table.filters {
+      border-color: #FFFFFF;
+      table-layout: fixed;
+      border-width: 1px;
+      border-style: solid;
+      font-family: arial;
+      font-size: 12px;
+      padding: 15px
+    }
+    table.filters td, table.filters tr {
+      border-color: #FFFFFF;
+      padding: 15px
     }
     th {
       height: 50px;
@@ -84,7 +97,43 @@
   </script>
 
   <body>
-    <select style="width: 210px;" class="filter_species" id="speciesFilter">
+    <table class = "filters" width='100%' border='1' style='border-collapse:collapse;'>
+      <tr>
+        <td>
+          <select style="width: 150px;" class="filter_species" id="speciesFilter">
+              <option value="all">Select Species </option>
+              <option disabled>----------------</option>
+              <option value="S.Cerevisiae">S.Cerevisiae</option>
+              <option value="C.Elegans">C.Elegans</option>
+              <option value="D.Melanogaster">D.Melanogaster</option>
+              <option value="M.Musculus">M.Musculus</option>
+              <option value="H.Sapiens">H.Sapiens</option>
+              <option value="B.Taurus">B.Taurus</option>
+              <option value="X.Laevis">X.Laevis</option>
+              <option disabled>----------------</option>
+              <option value="B.Subtilis">B.Subtilis</option>
+              <option value="E.Coli">E.Coli</option>
+              <option disabled>----------------</option>
+              <option value="Poxviridae">Poxviridae</option>
+              <option value="Flaviviridae">Flaviviridae</option>
+              <option value="Potyviridae">Potyviridae</option>
+          </select>
+        </td>
+        <td>
+          <input size = "20" class="filter_group" id="groupFilter" placeholder='Search Protein Group'>
+        </td>
+        <td>
+          <input size = "20" class="filter_protein" id="proteinFilter" placeholder='Search Protein Name'>
+        </td>
+        <td>
+          <input size = "20" class="filter_localization" id="localizationFilter" placeholder='Search Localization'>
+        </td>
+        <td>
+          <input size = "20" class="filter_bprocess" id="bprocessFilter" placeholder='Search Biological Process'>
+        </td>
+      </tr>
+    </table>
+    <!-- <select style="width: 210px;" class="filter_species" id="speciesFilter">
         <option value="all">Select Species </option>
         <option disabled>----------------</option>
         <option value="S.Cerevisiae">S.Cerevisiae</option>
@@ -105,7 +154,7 @@
     <input size = "25" class="filter_group" id="groupFilter" placeholder='Search Protein Group'>&nbsp;&nbsp;
     <input size = "25" class="filter_protein" id="proteinFilter" placeholder='Search Protein Name'>&nbsp;&nbsp;
     <input size = "25" class="filter_localization" id="localizationFilter" placeholder='Search Localization'>&nbsp;&nbsp;
-    <input size = "25" class="filter_bprocess" id="bprocessFilter" placeholder='Search Biological Process'>
+    <input size = "25" class="filter_bprocess" id="bprocessFilter" placeholder='Search Biological Process'> -->
 
     <table width='100%' border='1' style='border-collapse:collapse;' id = "helicasedb">
       <thead>
