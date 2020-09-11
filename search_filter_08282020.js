@@ -7,7 +7,7 @@
 //
 //
 $(document).ready(function () {
-    $("#speciesFilter, #groupFilter, #proteinFilter, #localizationFilter, #bprocessFilter").on("change", function () {
+    $("#speciesFilter, #groupFilter, #proteinFilter, #localizationFilter, #bprocessFilter").on("keyup", function () {
         var species = $('#speciesFilter').find("option:selected").val();
         var group = $('#groupFilter').val();
         var protein = $('#proteinFilter').val();
