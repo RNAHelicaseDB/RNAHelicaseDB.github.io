@@ -7,18 +7,21 @@
     <style>
       table, th, td {
         table-layout: fixed;
-                  border-width: 1px;
+        border-width: 1px;
         border-color: #000000;
         border-style: solid;
         font-family: arial;
       }
       table {
         border-collapse: collapse;
+        position: relative;
       }
       th {
         height: 50px;
         background-color: #CFD4B3;
         font-family: arial;
+        position: sticky;
+        top: 0;
       }
       #group {
         background-color: #EBEBEB;
@@ -83,7 +86,7 @@
       </tr>
   <!-- eIF4A -->
       <tr>
-        <th rowspan = "9" id = "group">eIF4A</th>
+        <td align="middle" rowspan = "9" id = "group"><b>eIF4A</b></th>
         <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_eIF4A.html">Tif1p</td>
         <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_eIF4A.html">eIF4A-I (DDX2A)</td>
         <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
@@ -191,7 +194,7 @@
       </tr>
   <!-- Has1  -->
       <tr>
-        <th rowspan = "4" id = "group">Has1</th>
+        <td align="middle" rowspan = "4" id = "group"><b>Has1</b></th>
         <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Has1p-DDX18.html">Has1p</td>
         <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Has1p-DDX18.html">DDX18</td>
         <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
@@ -241,7 +244,7 @@
       </tr>
       <!-- Rrp3  -->
       <tr>
-        <th rowspan = "4" id = "group">Rrp3</th>
+        <td align="middle" rowspan = "4" id = "group"><b>Rrp3</b></th>
         <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Rrp3p-DDX47.html">Rrp3p</td>
         <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Rrp3p-DDX47.html">DDX47</td>
         <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
@@ -291,7 +294,7 @@
       </tr>
       <!-- Ded1/p68 -->
       <tr>
-        <th rowspan = "11" id = "group">Ded1/<br>p68</th>
+        <td align="middle" rowspan = "11" id = "group"><b>Ded1/<br>p68</b<</th>
         <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Dbp3p.html">Dbp3p</td>
         <td align="middle" id = "noprotein"></td>
         <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
@@ -424,7 +427,7 @@
       </tr>
       <!-- Dbp9/Dbp6 -->
       <tr>
-        <th rowspan = "2" id = "group">Dbp9/<br>Dbp6</th>
+        <td align="middle" rowspan = "2" id = "group"><b>Dbp9/<br>Dbp6</b></th>
         <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Dbp9-Dbp6_sG_Dbp9p-DDX56.html">Dbp9p</td>
         <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_Dbp9-Dbp6_sG_Dbp9p-DDX56.html">DDX56</td>
         <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
@@ -450,7 +453,7 @@
       </tr>
       <!-- RH-gu -->
       <tr>
-        <th rowspan = "2" id = "group">RH-Gu</th>
+        <td align="middle" rowspan = "2" id = "group"><b>RH-Gu</b></th>
         <td rowspan = "2" align="middle" id = "noprotein"></td>
         <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G_RH-Gu_sG_DDX21-DDX50-RH-Gu.html">RH-Gu-α (DDX21)</td>
         <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
@@ -475,7 +478,7 @@
       </tr>
       <!-- miscellaneous -->
       <tr>
-        <th id = "group"></th>
+        <td align="middle" id = "group"></th>
         <td align="middle" id = "noprotein"></td>
         <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G__sG_DDX1.html">DDX1</td>
         <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
@@ -488,7 +491,7 @@
         <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
       </tr>
       <tr>
-        <th id = "group"></th>
+        <td align="middle" id = "group"></th>
         <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Mak5p-DDX24.html">Mak5p</td>
         <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Mak5p-DDX24.html">DDX24</td>
         <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
@@ -501,7 +504,7 @@
         <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
       </tr>
       <tr>
-        <th id = "group"></th>
+        <td align="middle" id = "group"></th>
         <td align="middle" id = "noprotein"></td>
         <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G__sG_DDX59.html">DDX59</td>
         <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
@@ -514,7 +517,7 @@
         <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
       </tr>
       <tr>
-        <th id = "group"></th>
+        <td align="middle" id = "group"></th>
         <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Rok1p-DDX52.html">Rok1p</td>
         <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Rok1p-DDX52.html">DDX52</td>
         <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
@@ -527,7 +530,7 @@
         <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
       </tr>
       <tr>
-        <th id = "group"></th>
+        <td align="middle" id = "group"></th>
         <td align="middle" id = "noprotein"></td>
         <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G__sG_DDX28.html">DDX28</td>
         <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
@@ -540,7 +543,7 @@
         <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
       </tr>
       <tr>
-        <th id = "group"></th>
+        <td align="middle" id = "group"></th>
         <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Mss116p.html">Mss116p</td>
         <td align="middle" id = "noprotein"></td>
         <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
@@ -553,7 +556,7 @@
         <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
       </tr>
       <tr>
-        <th id = "group"></th>
+        <td align="middle" id = "group"></th>
         <td align="middle" id = "proteinname"><a href="euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Mrh4p.html">Mrh4p</td>
         <td align="middle" id = "noprotein"></td>
         <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
