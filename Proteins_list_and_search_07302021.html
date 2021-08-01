@@ -1,0 +1,2432 @@
+<html>
+  <head>
+      <title>Search RNA Helicase Database</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <style>
+    .notfound{
+      display: none;
+    }
+    table, th, td {
+      table-layout: fixed;
+      border-width: 1px;
+      border-color: #000000;
+      border-style: solid;
+      font-family: arial;
+      padding: 15px;
+      font-size: 12px
+    }
+    table {
+      border-collapse: collapse;
+    }
+    table.filters {
+      border-color: #FFFFFF;
+      table-layout: fixed;
+      border-width: 1px;
+      border-style: solid;
+      font-family: arial;
+      font-size: 12px;
+      padding: 5;
+      /* margin: 0; */
+      /* padding: 15px */
+    }
+    table.filters td, table.filters tr {
+      border-color: #FFFFFF;
+      padding: 5;
+      /* margin: 0; */
+      /* padding: 15px */
+    }
+    th {
+      height: 50px;
+      background-color: #CFD4B3;
+      font-family: arial;
+    }
+    #group {
+      background-color: #EBEBEB;
+    }
+    #proteinname {
+      padding: 10px;
+      background-color: #F8FFFF;
+    }
+    #noprotein {
+      background-color: #FFFFE1;
+    }
+    a {
+      text-decoration: none;
+    }
+    p {
+      font-family: arial;
+    }
+    h1 {
+      font-family: arial;
+      font-size: 20px;
+      font-weight: bold;
+      color: LightSeaGreen;
+    }
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: red;
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 4px;
+    }
+
+    #myBtn:hover {
+      background-color: #555;
+    }
+
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://rnahelicasedb.github.io/search_filter_08282020.js"></script>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+  <script>
+    $(document).ready(function(){
+      $("#hide").click(function(){
+        $("#helicasedb").hide();
+      });
+      $("#show").click(function(){
+        $("#helicasedb").show();
+      });
+    });
+  </script>
+
+  <body>
+    <table class = "filters" width='100%' border='1' style='border-collapse:collapse;'>
+      <tr>
+        <td>
+        <!-- <td style="text-align: center; vertical-align: middle;"> -->
+          <select style="width: 175px;" class="filter_species" id="speciesFilter">
+              <option value="all">Select Species </option>
+              <option disabled>----------------</option>
+              <option value="S.Cerevisiae">S.Cerevisiae</option>
+              <option value="C.Elegans">C.Elegans</option>
+              <option value="D.Melanogaster">D.Melanogaster</option>
+              <option value="M.Musculus">M.Musculus</option>
+              <option value="H.Sapiens">H.Sapiens</option>
+              <option value="B.Taurus">B.Taurus</option>
+              <option value="X.Laevis">X.Laevis</option>
+              <option disabled>----------------</option>
+              <option value="B.Subtilis">B.Subtilis</option>
+              <option value="E.Coli">E.Coli</option>
+              <option disabled>----------------</option>
+              <option value="Poxviridae">Poxviridae</option>
+              <option value="Flaviviridae">Flaviviridae</option>
+              <option value="Potyviridae">Potyviridae</option>
+          </select>
+        </td>
+        <td>
+        <!-- <td style="text-align: center; vertical-align: middle;"> -->
+          <input size = "20" class="filter_group" id="groupFilter" placeholder='Search Protein Group'>
+        </td>
+        <td>
+        <!-- <td style="text-align: center; vertical-align: middle;"> -->
+          <input size = "20" class="filter_protein" id="proteinFilter" placeholder='Search Protein Name'>
+        </td>
+        <td>
+        <!-- <td style="text-align: center; vertical-align: middle;"> -->
+          <input size = "20" class="filter_localization" id="localizationFilter" placeholder='Search Localization'>
+        </td>
+        <td>
+        <!-- <td style="text-align: center; vertical-align: middle;"> -->
+          <input size = "20" class="filter_bprocess" id="bprocessFilter" placeholder='Search Biological Process'>
+        </td>
+      </tr>
+    </table>
+    <!-- <select style="width: 210px;" class="filter_species" id="speciesFilter">
+        <option value="all">Select Species </option>
+        <option disabled>----------------</option>
+        <option value="S.Cerevisiae">S.Cerevisiae</option>
+        <option value="C.Elegans">C.Elegans</option>
+        <option value="D.Melanogaster">D.Melanogaster</option>
+        <option value="M.Musculus">M.Musculus</option>
+        <option value="H.Sapiens">H.Sapiens</option>
+        <option value="B.Taurus">B.Taurus</option>
+        <option value="X.Laevis">X.Laevis</option>
+        <option disabled>----------------</option>
+        <option value="B.Subtilis">B.Subtilis</option>
+        <option value="E.Coli">E.Coli</option>
+        <option disabled>----------------</option>
+        <option value="Poxviridae">Poxviridae</option>
+        <option value="Flaviviridae">Flaviviridae</option>
+        <option value="Potyviridae">Potyviridae</option>
+    </select>&nbsp;&nbsp;&nbsp;
+    <input size = "25" class="filter_group" id="groupFilter" placeholder='Search Protein Group'>&nbsp;&nbsp;
+    <input size = "25" class="filter_protein" id="proteinFilter" placeholder='Search Protein Name'>&nbsp;&nbsp;
+    <input size = "25" class="filter_localization" id="localizationFilter" placeholder='Search Localization'>&nbsp;&nbsp;
+    <input size = "25" class="filter_bprocess" id="bprocessFilter" placeholder='Search Biological Process'> -->
+
+    <table width='100%' border='1' style='border-collapse:collapse;' id = "helicasedb">
+      <thead>
+        <tr>
+          <th>Species</th>
+          <th>Group</th>
+          <th>Protein</th>
+          <th>Localization</th>
+          <th>Biological Process</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>S.Cerevisiae</td>
+        <td>Sen1 / SETX</td>
+        <td><a href="https://rnahelicasedb.github.io/sf1_helicase/Sen1_STX.html">SEN1</b><br>YLR430W / L9576.1</td>
+        <td>Nucleus</td>
+        <td>pre-mRNA processing<br>rRNA processing<br>tRNA processing</td>
+      </tr>
+      <tr>
+        <td>D.Melanogaster</td>
+        <td>Sen1 / SETX</td>
+        <td><a href="https://rnahelicasedb.github.io/sf1_helicase/Sen1_STX.html">CG7504</td>
+        <td>Nucleus</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>M.Musculus</td>
+        <td>Sen1 / SETX</td>
+        <td><a href="https://rnahelicasedb.github.io/sf1_helicase/Sen1_STX.html">Setx<br>Als4 / Kiaa0625</td>
+        <td>Nucleus<br>Cytoplasm</td>
+        <td>DNA repair<br>DNA recombination</td>
+      </tr>
+      <tr>
+        <td>H.Sapiens</td>
+        <td>Sen1 / SETX</td>
+        <td><a href="https://rnahelicasedb.github.io/sf1_helicase/Sen1_STX.html">SETX<br>ALS4 / KIAA0625 / SCAR1</td>
+        <td>Nucleus<br>Cytoplasm</td>
+        <td>DNA repair<br>DNA recombination</td>
+      </tr>
+      <tr>
+        <td>C.Elegans</td>
+        <td>ZNFX1 / IBP160</td>
+        <td><a href="https://rnahelicasedb.github.io/sf1_helicase/ZNFX1_IBP160.html">znfx-1<br>ZK1067.2</td>
+        <td>Cytoplasm</td>
+        <td>RNA-mediated gene silencing</td>
+      </tr>
+      <tr>
+        <td>D.Melanogaster</td>
+        <td>ZNFX1 / IBP160</td>
+        <td><a href="https://rnahelicasedb.github.io/sf1_helicase/ZNFX1_IBP160.html">CG6204</td>
+        <td>Nucleus</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>M.Musculus</td>
+        <td>ZNFX1 / IBP160</td>
+        <td><a href="https://rnahelicasedb.github.io/sf1_helicase/ZNFX1_IBP160.html">Znfx-1</td>
+        <td>Nucleus</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>H.Sapiens</td>
+        <td>ZNFX1 / IBP160</td>
+        <td><a href="https://rnahelicasedb.github.io/sf1_helicase/ZNFX1_IBP160.html">ZNFX1<br>KIAA1404</td>
+        <td>Nucleus</td>
+        <td>mRNA processing<br>mRNA splicing</td>
+      </tr>
+      <tr>
+        <td>S.Cerevisiae</td>
+        <td>Upf1</td>
+        <td><a href="https://rnahelicasedb.github.io/sf1_helicase/Upf1.html">Upf1p<br>YMR080C</td>
+        <td>Nucleus<br>Cytoplasm</td>
+        <td>RNA decay</td>
+      </tr>
+      <tr>
+        <td>D.Melanogaster</td>
+        <td>Upf1</td>
+        <td><a href="https://rnahelicasedb.github.io/sf1_helicase/Upf1.html">CG1559</td>
+        <td>Cytoplasm</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>M.Musculus</td>
+        <td>Upf1</td>
+        <td><a href="https://rnahelicasedb.github.io/sf1_helicase/Upf1.html">Upf1<br>Rent1</td>
+        <td>Nucleus<br>Cytoplasm</td>
+        <td>RNA decay</td>
+      </tr>
+      <tr>
+        <td>H.Sapiens</td>
+        <td>Upf1</td>
+        <td><a href="https://rnahelicasedb.github.io/sf1_helicase/Upf1.html">UPF1<br>KIAA0221 / RENT1</td>
+        <td>Nucleus<br>Cytoplasm</td>
+        <td>RNA decay</td>
+      </tr>
+      <tr>
+         <td>S.Cerevisiae</td>
+         <td>Hcs1 / IGHMBP2</td>
+         <td><a href="https://rnahelicasedb.github.io/sf1_helicase/Hcs1_IGHMBP2.html">DIP1<br>YKL017C</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>Translation initiation</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Hcs1 / IGHMBP2</td>
+         <td><a href="https://rnahelicasedb.github.io/sf1_helicase/Hcs1_IGHMBP2.html">Ighmbp2<br>Smbp2</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>Transcription</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Hcs1 / IGHMBP2</td>
+         <td><a href="https://rnahelicasedb.github.io/sf1_helicase/Hcs1_IGHMBP2.html">IGHMBP2<br>SMBP2</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>Transcription</td>
+       </tr>
+       <tr>
+          <td>S.Cerevisiae</td>
+          <td>DNA2</td>
+          <td><a href="https://rnahelicasedb.github.io/sf1_helicase/DNA2.html">DNA2<br>YHR164C</td>
+          <td>Nucleus<br>Chromosome</td>
+          <td>DNA repair</td>
+        </tr>
+        <tr>
+          <td>C.Elegans</td>
+          <td>DNA2</td>
+          <td><a href="https://rnahelicasedb.github.io/sf1_helicase/DNA2.html">dna-2<br>CELE_F43G6.1</td>
+          <td>Nucleus</td>
+          <td>DNA repair<br>DNA replication</td>
+        </tr>
+        <tr>
+          <td>D.Melanogaster</td>
+          <td>DNA2</td>
+          <td><a href="https://rnahelicasedb.github.io/sf1_helicase/DNA2.html">CG2990</td>
+          <td>Nucleus</td>
+          <td>DNA repair<br>DNA replication</td>
+        </tr>
+        <tr>
+          <td>M.Musculus</td>
+          <td>DNA2</td>
+          <td><a href="https://rnahelicasedb.github.io/sf1_helicase/DNA2.html">Dna2 / Dna2l<br>Kiaa0083</td>
+          <td>Nucleus<br>Mitochondrion</td>
+          <td>DNA repair<br>DNA replication</td>
+        </tr>
+        <tr>
+          <td>H.Sapiens</td>
+          <td>DNA2</td>
+          <td><a href="https://rnahelicasedb.github.io/sf1_helicase/DNA2.html">DNA2 / DNA2L<br>KIAA0083</td>
+          <td>Nucleus<br>Mitochondrion</td>
+          <td>DNA repair<br>DNA replication</td>
+        </tr>
+        <tr>
+           <td>S.Cerevisiae</td>
+           <td>Mtt1p / MOV10 / HELZ</td>
+           <td><a href="https://rnahelicasedb.github.io/sf1_helicase/Mtt1p_MOV10_HELZ.html">ECM32<br>YER176W</td>
+           <td>Cytoplasm</td>
+           <td></td>
+         </tr>
+         <tr>
+           <td>D.Melanogaster</td>
+           <td>Mtt1p / MOV10 / HELZ</td>
+           <td><a href="https://rnahelicasedb.github.io/sf1_helicase/Mtt1p_MOV10_HELZ.html">CG6967</td>
+           <td>Cytoplasm</td>
+           <td>RNA-mediated gene silencing</td>
+         </tr>
+         <tr>
+           <td>M.Musculus</td>
+           <td>Mtt1p / MOV10 / HELZ</td>
+           <td><a href="https://rnahelicasedb.github.io/sf1_helicase/Mtt1p_MOV10_HELZ.html">Mov10<br>Gb110</td>
+           <td>Cytoplasm<br>Nucleus</td>
+           <td>RNA-mediated gene silencing</td>
+         </tr>
+         <tr>
+           <td>H.Sapiens</td>
+           <td>Mtt1p / MOV10 / HELZ</td>
+           <td><a href="https://rnahelicasedb.github.io/sf1_helicase/Mtt1p_MOV10_HELZ.html">MOV10<br>KIAA1631</td>
+           <td>Cytoplasm<br>Nucleus</td>
+           <td>RNA-mediated gene silencing<br>Transcription</td>
+         </tr>
+         <tr>
+           <td>M.Musculus</td>
+           <td>Mtt1p / MOV10 / HELZ</td>
+           <td><a href="https://rnahelicasedb.github.io/sf1_helicase/Mtt1p_MOV10_HELZ.html">Mov10l1</b><br>Champ</td>
+           <td>Cytoplasm<br>Nucleus</td>
+           <td>RNA-mediated gene silencing</td>
+         </tr>
+         <tr>
+           <td>H.Sapiens</td>
+           <td>Mtt1p / MOV10 / HELZ</td>
+           <td><a href="https://rnahelicasedb.github.io/sf1_helicase/Mtt1p_MOV10_HELZ.html">MOV10L1</td>
+           <td>Cytoplasm<br>Nucleus</td>
+           <td>RNA-mediated gene silencing<br>Transcription</td>
+         </tr>
+         <tr>
+           <td>D.Melanogaster</td>
+           <td>Mtt1p / MOV10 / HELZ</td>
+           <td><a href="https://rnahelicasedb.github.io/sf1_helicase/Mtt1p_MOV10_HELZ.html">CG9425</td>
+           <td>Cytoplasm</td>
+           <td>RNA-mediated gene silencing</td>
+         </tr>
+         <tr>
+           <td>M.Musculus</td>
+           <td>Mtt1p / MOV10 / HELZ</td>
+           <td><a href="https://rnahelicasedb.github.io/sf1_helicase/Mtt1p_MOV10_HELZ.html">Helz<br>Kiaa0054</td>
+           <td>Cytoplasm<br>Nucleus</td>
+           <td>RNA-mediated gene silencing</td>
+         </tr>
+         <tr>
+           <td>H.Sapiens</td>
+           <td>Mtt1p / MOV10 / HELZ</td>
+           <td><a href="https://rnahelicasedb.github.io/sf1_helicase/Mtt1p_MOV10_HELZ.html">HELZ<br>KIAA0054</td>
+           <td>Cytoplasm<br>Nucleus</td>
+           <td>RNA-mediated gene silencing<br>Transcription</td>
+         </tr>
+         <tr>
+           <td>E.Coli</td>
+           <td></td>
+           <td><a href="https://rnahelicasedb.github.io/sf1_helicase/Bacterial_SF1.html">UL1</td>
+           <td>Cytoplasm</td>
+           <td>rRNA processing<br>Translation</td>
+         </tr>
+         <tr>
+           <td>E.Coli</td>
+           <td></td>
+           <td><a href="https://rnahelicasedb.github.io/sf1_helicase/Bacterial_SF1.html">Z1202</td>
+           <td></td>
+           <td></td>
+         </tr>
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>eIF4A</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_eIF4A.html">TIF1p / YKR059W<br>TIF2p / YJL138C</td>
+         <td>Cytoplasm</td>
+         <td>Translation initiation</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>eIF4A</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_eIF4A.html">eIF4A<br>F57B9.6</td>
+         <td></td>
+         <td>Translation initiation</td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>eIF4A</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_eIF4A.html">CG9075</td>
+         <td>Cytoplasm</td>
+         <td>Translation initiation</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>eIF4A</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_eIF4A.html">Eif4a-1<br>Ddx2a</td>
+         <td></td>
+         <td>Translation initiation</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>eIF4A</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_eIF4A.html">EIF4A-1<br>DDX2A</td>
+         <td>Cytoplasm<br>Extracellular exosome</td>
+         <td>Translation initiation<br>Host-virus interaction</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>eIF4A</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_eIF4A.html">Eif4a-2<br>Ddx2b</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>eIF4A</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_eIF4A.html">EIF4A-2<br>DDX2B</td>
+         <td>Cytoplasm</td>
+         <td>Translation initiation<br>Host-virus interaction</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Fal1p / eIF4A3 / DDX48</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Fal1p-eIF4A3-DDX48.html">FAL1<br>YDR021W</td>
+         <td>Nucleus</td>
+         <td>Ribosome biogenesis</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Fal1p / eIF4A3 / DDX48</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Fal1p-eIF4A3-DDX48.html">F33D11.10</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Fal1p / eIF4A3 / DDX48</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Fal1p-eIF4A3-DDX48.html">eIF4A-III<br>CG7483</td>
+         <td>Nucleus</td>
+         <td>Pre-mRNA splicing<br>RNA export</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Fal1p / eIF4A3 / DDX48</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Fal1p-eIF4A3-DDX48.html">Eif4a-3<br>Ddx48</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>Pre-mRNA splicing<br>RNA export<br>RNA decay</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Fal1p / eIF4A3 / DDX48</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Fal1p-eIF4A3-DDX48.html">EIF4A-3<br>DDX48</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>pre-mRNA splicing<br>RNA export<br>Translation<br>RNA decay<br>(Component of exon junction complex)</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Dhh1p / RCK / DDX6</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Dhh1p-RCK-DDX6.html">Dhh1p<br>YDL160C</td>
+         <td>Cytoplasm<br>P-body</td>
+         <td>pre-mRNA processing<br>Translation<br>RNA export<br>RNA decay</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Dhh1p / RCK / DDX6</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Dhh1p-RCK-DDX6.html">cgh-1</td>
+         <td>Cytoplasm<br>P-granule</td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Dhh1p / RCK / DDX6</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Dhh1p-RCK-DDX6.html">me31B</td>
+         <td>Cytoplasm<br>Endoplasmic Reticulum<br>P-body</td>
+         <td>Translation<br>RNA decay</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Dhh1p / RCK / DDX6</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Dhh1p-RCK-DDX6.html">Ddx6</td>
+         <td>Nucleus<br>Cytoplasm<br>P-body</td>
+         <td>RNA decay</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Dhh1p / RCK / DDX6</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Dhh1p-RCK-DDX6.html">RCK<br>p54 / DDX6</td>
+         <td>Nucleus<br>Cytoplasm<br>P-body</td>
+         <td>RNA decay</td>
+       </tr>
+       <tr>
+         <td>X.Laevis</td>
+         <td>Dhh1p / RCK / DDX6</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Dhh1p-RCK-DDX6.html">XP54</td>
+         <td>Nucleus<br>Cytoplasm<br>P-body</td>
+         <td></td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Dbp5p / DDX19 / DDX25</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Dbp5p-DDX19-DDX25.html">Dbp5p<br>YOR046C</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>RNA export<br>Translation</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Dbp5p / DDX19 / DDX25</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Dbp5p-DDX19-DDX25.html">ddx-19<br>CELE_T07D4.4</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Dbp5p / DDX19 / DDX25</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Dbp5p-DDX19-DDX25.html">Dbp80 / Dbp5<br>Hel40 / Hel80<br>CG17023</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>RNA export</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Dbp5p / DDX19 / DDX25</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Dbp5p-DDX19-DDX25.html">Ddx19a</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>RNA export</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Dbp5p / DDX19 / DDX25</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Dbp5p-DDX19-DDX25.html">DDX19A</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>RNA export</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Dbp5p / DDX19 / DDX25</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Dbp5p-DDX19-DDX25.html">Ddx25</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>RNA export<br>Translation</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Dbp5p / DDX19 / DDX25</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Dbp5p-DDX19-DDX25.html">DDX25</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>RNA export<br>Translation</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Sub2p / UAP56 / DDX39</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Sub2p-UAP56-DDX39.html">Sub2p<br>YDL084W</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing<br>RNA export</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Sub2p / UAP56 / DDX39</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Sub2p-UAP56-DDX39.html">UAP56<br>hel-1 / C26D10.2</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Sub2p / UAP56 / DDX39</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Sub2p-UAP56-DDX39.html">HEL / UAP56<br>Hel25E / CG7269</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Sub2p / UAP56 / DDX39</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Sub2p-UAP56-DDX39.html">Uap56<br>Bat1 / Bat1a / Ddx39b</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>pre-mRNA splicing<br>RNA export</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Sub2p / UAP56 / DDX39</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Sub2p-UAP56-DDX39.html">UAP56<br>BAT1 / DDX39B</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>pre-mRNA splicing<br>RNA export</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Sub2p / UAP56 / DDX39</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Sub2p-UAP56-DDX39.html">Ddx39a</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>pre-mRNA splicing<br>RNA export</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Sub2p / UAP56 / DDX39</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Sub2p-UAP56-DDX39.html">DDX39A</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>pre-mRNA splicing<br>RNA export</td>
+       </tr>
+
+       <tr>
+         <td>M.Musculus</td>
+         <td>Gemin3 / DDX20</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Gemin3-DDX20.html">Ddx20<br>Gemin-3</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>snRNP biogenesis<br>pre-mRNA splicing</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Gemin3 / DDX20</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_eIF4A_sG_Gemin3-DDX20.html">DDX20<br>GEMIN-3</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>snRNP biogenesis<br>pre-mRNA splicing</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Has1p / DDX18</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Has1p-DDX18.html">Has1p<br>YMR290C</td>
+         <td>Nucleus</td>
+         <td>Ribosome biogenesis<br>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Has1p / DDX18</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Has1p-DDX18.html">B0511.6</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Has1p / DDX18</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Has1p-DDX18.html">CG6375</td>
+         <td>Nucleus</td>
+         <td>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Has1p / DDX18</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Has1p-DDX18.html">Ddx18</td>
+         <td>Nucleus</td>
+         <td>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Has1p / DDX18</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Has1p-DDX18.html">DDX18<br>MrdB</td>
+         <td>Nucleus</td>
+         <td>rRNA processing</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Dbp4p / DDX10</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Dbp4p-DDX10.html">Dbp4p<br>YJL033W</td>
+         <td>Nucleus</td>
+         <td>Ribosome biogenesis<br>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Dbp4p / DDX10</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Dbp4p-DDX10.html">CELE_Y23H5B.6</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Dbp4p / DDX10</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Dbp4p-DDX10.html">CG5800</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Dbp4p / DDX10</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Dbp4p-DDX10.html">Ddx10</td>
+         <td>Nucleus</td>
+         <td>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Dbp4p / DDX10</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Dbp4p-DDX10.html">DDX10</td>
+         <td>Nucleus</td>
+         <td>rRNA processing</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Spb4p / DDX55</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Spb4p-DDX55.html">Spb4p<br>YFL002C</td>
+         <td>Nucleus</td>
+         <td>Ribosome biogenesis<br>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Spb4p / DDX55</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Spb4p-DDX55.html">Ddx55<br>ZK512.2</td>
+         <td>Nucleus</td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Spb4p / DDX55</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Spb4p-DDX55.html">Ddx55<br>CG9630</td>
+         <td>Nucleus</td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Spb4p / DDX55</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Spb4p-DDX55.html">Ddx55</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Spb4p / DDX55</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Spb4p-DDX55.html">DDX55</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td></td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Dbp7p / DDX31</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Dbp7p-DDX31.html">Dbp7p<br>YKR024C</td>
+         <td>Nucleus</td>
+         <td>Ribosome biogenesis<br>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Dbp7p / DDX31</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Dbp7p-DDX31.html">CG8611<br>BcDNA.GH02833</td>
+         <td>Nucleus</td>
+         <td>Ribosome biogenesis</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Dbp7p / DDX31</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Dbp7p-DDX31.html">Ddx31</td>
+         <td>Nucleus</td>
+         <td>Ribosome biogenesis</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Dbp7p / DDX31</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Has1_sG_Dbp7p-DDX31.html">DDX31</td>
+         <td>Nucleus</td>
+         <td>Ribosome biogenesis</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Rrp3p / DDX47</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Rrp3p-DDX47.html">Rrp3p<br>YHR065C</td>
+         <td>Nucleus</td>
+         <td>Ribosome biogenesis<br>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Rrp3p / DDX47</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Rrp3p-DDX47.html">Ddx47<br>T26G10.1</td>
+         <td>Nucleus</td>
+         <td>Ribosome biogenesis<br>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Rrp3p / DDX47</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Rrp3p-DDX47.html">CG9253</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Rrp3p / DDX47</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Rrp3p-DDX47.html">Ddx47</td>
+         <td>Nucleus</td>
+         <td>mRNA splicing<br>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Rrp3p / DDX47</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Rrp3p-DDX47.html">DDX47</td>
+         <td>Nucleus</td>
+         <td>mRNA splicing<br>rRNA processing</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Dbp8p / DDX49</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Dbp8p-DDX49.html">Dbp8p<br>YHR169<br></td>
+         <td>Nucleus</td>
+         <td>Ribosome biogenesis<br>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Dbp8p / DDX49</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Dbp8p-DDX49.html">CELE_H20J04.4</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Dbp8p / DDX49</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Dbp8p-DDX49.html">Dbp45A<br>CG12759</td>
+         <td>Nucleus</td>
+         <td>mRNA splicing<br>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Dbp8p / DDX49</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Dbp8p-DDX49.html">Ddx49</td>
+         <td>Nucleus</td>
+         <td>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Dbp8p / DDX49</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Dbp8p-DDX49.html">DDX49</td>
+         <td>Nucleus</td>
+         <td>rRNA processing</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Drs1p / DDX27</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Drs1p-DDX27.html">Drs1p<br>YLL008W</td>
+         <td>Nucleus</td>
+         <td>Ribosome biogenesis<br>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Drs1p / DDX27</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Drs1p-DDX27.html">CELE_Y71G12B.8	</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Drs1p / DDX27</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Drs1p-DDX27.html">CG2173</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Drs1p / DDX27</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Drs1p-DDX27.html">Ddx27</td>
+         <td>Nucleus</td>
+         <td>Ribosome biogenesis<br>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Drs1p / DDX27</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Drs1p-DDX27.html">DDX27</td>
+         <td>Nucleus</td>
+         <td>Ribosome biogenesis<br>rRNA processing</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Dbp10p / DDX54</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Dbp10p-DDX54.html">Dbp10p<br>YDL031W</td>
+         <td>Nucleus</td>
+         <td>Ribosome biogenesis<br>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Dbp10p / DDX54</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Dbp10p-DDX54.html">CELE_Y94H6A.5</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Dbp10p / DDX54</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Dbp10p-DDX54.html">CG32344 / CG6994<br>LD28101p</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Dbp10p / DDX54</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Dbp10p-DDX54.html">Ddx54</td>
+         <td>Nucleus</td>
+         <td>Transcription<br>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Dbp10p / DDX54</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Rrp3_sG_Dbp10p-DDX54.html">DDX54</td>
+         <td>Nucleus</td>
+         <td>Transcription<br>rRNA processing</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Dbp3p</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Dbp3p.html">Dbp3p<br>YGL078C</td>
+         <td>Nucleus</td>
+         <td>Ribosome biogenesis</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Ded1p / DDX3 / Dbp1p</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Ded1p-DDX3-Dbp1p.html">Ded1p<br>YOR204W</td>
+         <td>Cytoplasm</td>
+         <td>pre-mRNA splicing<br>Ribosome biogenesis<br>Translation</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Ded1p / DDX3 / Dbp1p</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Ded1p-DDX3-Dbp1p.html">Y71H2AM.19</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>Translation</td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Ded1p / DDX3 / Dbp1p</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Ded1p-DDX3-Dbp1p.html">	Ddx3<br>CG9748 / bel</td>
+         <td>Cytoplasm</td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Ded1p / DDX3 / Dbp1p</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Ded1p-DDX3-Dbp1p.html">Ddx3x</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>Translation</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Ded1p / DDX3 / Dbp1p</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Ded1p-DDX3-Dbp1p.html">DDX3X</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>Translation<br>RNA export</td>
+       </tr>
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Ded1p / DDX3 / Dbp1p</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Ded1p-DDX3-Dbp1p.html">Dbp1p<br>YPL119C</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>Translation</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Ded1p / DDX3 / Dbp1p</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Ded1p-DDX3-Dbp1p.html">Ddx3y</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Ded1p / DDX3 / Dbp1p</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Ded1p-DDX3-Dbp1p.html">DDX3Y</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>RNA export<br>Translation</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Ded1p / DDX3 / Dbp1p</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Ded1p-DDX3-Dbp1p.html">Pl10<br>D1Pas1</td>
+         <td>Nucleus</td>
+         <td></td>
+       </tr>
+
+       <tr>
+         <td>C.Elegans</td>
+         <td>Vasa / DDX4</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Vasa-DDX4.html">Vasa Isoform A<br>vbh-1 / CELE_Y54E10A.9</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Vasa / DDX4</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Vasa-DDX4.html">Vasa Isoform B<br>vbh-1 / CELE_Y54E10A.9</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Vasa / DDX4</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Vasa-DDX4.html">Vasa Isoform C<br>vbh-1 / CELE_Y54E10A.9</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Vasa / DDX4</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Vasa-DDX4.html">Vasa<br>CG46283</td>
+         <td>Cytoplasm</td>
+         <td>Translation</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Vasa / DDX4</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Vasa-DDX4.html">Ddx4</td>
+         <td>Cytoplasm</td>
+         <td>RNA-mediated gene silencing</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Vasa / DDX4</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Vasa-DDX4.html">DDX4</td>
+         <td>Cytoplasm</td>
+         <td>RNA-mediated gene silencing</td>
+       </tr>
+
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>DDX53</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_DDX53.html">CG7878</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>DDX53</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_DDX53.html">DDX53<br>CAGE</td>
+         <td>Nucleus</td>
+         <td></td>
+       </tr>
+
+       <tr>
+         <td>H.Sapiens</td>
+         <td>DDX43 / HAGE</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_DDX43-(HAGE).html">DDX43<br>HAGE</td>
+         <td>Nucleus</td>
+         <td></td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>p68/72 / DDX5/17 / Dbp2p</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_p68-72-DDX5-17-Dbp2p.html">Dbp2p<br>YNL112W</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>Transcription<br>Ribosome biogenesis<br>rRNA processing<br>RNA decay<br>mRNA export</td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>p68/72 / DDX5/17 / Dbp2p</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_p68-72-DDX5-17-Dbp2p.html">Rm62<br>CG10279<br>Dmp68 / p62</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>RNA-mediated gene silencing<br>Translation</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>p68/72 / DDX5/17 / Dbp2p</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_p68-72-DDX5-17-Dbp2p.html">Ddx5<br>p68</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>pre-mRNA splicing<br>Transcription</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>p68/72 / DDX5/17 / Dbp2p</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_p68-72-DDX5-17-Dbp2p.html">DDX5<br>p68</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>pre-mRNA splicing<br>Transcription<br>RNA decay</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>p68/72 / DDX5/17 / Dbp2p</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_p68-72-DDX5-17-Dbp2p.html">Ddx17<br>p72</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>pre-mRNA splicing<br>rRNA processing<br>RNA-mediated gene silencing<br>Transcription</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>p68/72 / DDX5/17 / Dbp2p</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_p68-72-DDX5-17-Dbp2p.html">DDX17<br>p72</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>pre-mRNA splicing<br>rRNA processing<br>RNA-mediated gene silencing<br>Transcription<br>RNA decay</td>
+       </tr>
+
+       <tr>
+         <td>C.Elegans</td>
+         <td>DDX42 / SF3b125</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_DDX42-SF3b125.html">C46F11.4</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>DDX42 / SF3b125</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_DDX42-SF3b125.html">CG6418</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>DDX42 / SF3b125</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_DDX42-SF3b125.html">Ddx42</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>DDX42 / SF3b125</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_DDX42-SF3b125.html">DDX42<br>SF3b125</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Prp28p / DDX23</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Prp28p-DDX23.html">Prp28p<br>YDR243C</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Prp28p / DDX23</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Prp28p-DDX23.html">CELE_F01F1.7</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Prp28p / DDX23</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Prp28p-DDX23.html">CG10333<br>RH55640p</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Prp28p / DDX23</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Prp28p-DDX23.html">Ddx23</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Prp28p / DDX23</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Prp28p-DDX23.html">DDX23</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Prp5 / DDX46</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Prp5-DDX46.html">Prp5p<br>YBR237W</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Prp5 / DDX46</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Prp5-DDX46.html">CELE_F53H1.1</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Prp5 / DDX46</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Prp5-DDX46.html">CG6227</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Prp5 / DDX46</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Prp5-DDX46.html">Ddx46</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Prp5 / DDX46</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Prp5-DDX46.html">DDX46</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+
+       <tr>
+         <td>C.Elegans</td>
+         <td>Abstrakt / DDX41</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Abstrakt-DDX41.html">CELE_H27M09.1</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Abstrakt / DDX41</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Abstrakt-DDX41.html">abstrakt<br>CG14637</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Abstrakt / DDX41</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Abstrakt-DDX41.html">Ddx41</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Abstrakt / DDX41</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Ded1-p68_sG_Abstrakt-DDX41.html">DDX41</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Dbp9p / DDX56</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Dbp9-Dbp6_sG_Dbp9p-DDX56.html">DBP9<br>YLR276C</td>
+         <td>Nucleus</td>
+         <td>Ribosome biogenesis<br>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Dbp9p / DDX56</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Dbp9-Dbp6_sG_Dbp9p-DDX56.html">C24H12.4</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Dbp9p / DDX56</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Dbp9-Dbp6_sG_Dbp9p-DDX56.html">CG1666<br>Hlc</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Dbp9p / DDX56</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Dbp9-Dbp6_sG_Dbp9p-DDX56.html">Ddx56</td>
+         <td>Nucleus</td>
+         <td>Ribosome biogenesis<br>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Dbp9p / DDX56</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Dbp9-Dbp6_sG_Dbp9p-DDX56.html">DDX56</td>
+         <td>Nucleus</td>
+         <td>Ribosome biogenesis<br>rRNA processing</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Dbp6p / DDX51</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Dbp9-Dbp6_sG_Dbp6p-DDX51.html">Dbp6p<br>YNR038W</td>
+         <td>Nucleus</td>
+         <td>Ribosome biogenesis<br>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Dbp6p / DDX51</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Dbp9-Dbp6_sG_Dbp6p-DDX51.html">ZK686.2</td>
+         <td>Nucleus</td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Dbp6p / DDX51</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Dbp9-Dbp6_sG_Dbp6p-DDX51.html">Dbp73D<br>CG9680</td>
+         <td>Nucleus</td>
+         <td>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Dbp6p / DDX51</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Dbp9-Dbp6_sG_Dbp6p-DDX51.html">Ddx51</td>
+         <td>Nucleus</td>
+         <td>Ribosome biogenesis<br>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Dbp6p / DDX51</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_Dbp9-Dbp6_sG_Dbp6p-DDX51.html">DDX51</td>
+         <td>Nucleus</td>
+         <td>Ribosome biogenesis<br>rRNA processing</td>
+       </tr>
+
+       <tr>
+         <td>M.Musculus</td>
+         <td>DDX21 / DDX50 / RH-Gu</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_RH-Gu_sG_DDX21-DDX50-RH-Gu.html">Ddx21<br>RH II/Gu<br>Gu-alpha</td>
+         <td>Nucleus<br>Cytopblasm<br>Mitochondrion</td>
+         <td>rRNA processing<br>Transcription</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>DDX21 / DDX50 / RH-Gu</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_RH-Gu_sG_DDX21-DDX50-RH-Gu.html">DDX21<br>RH II/Gu</td>
+         <td>Nucleus<br>Cytopblasm<br>Mitochondrion</td>
+         <td>Ribosome biogenesis<br>rRNA processing<br>Transcription</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>DDX21 / DDX50 / RH-Gu</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_RH-Gu_sG_DDX21-DDX50-RH-Gu.html">Ddx50<br>RH II/Gu<br>Gu-beta</td>
+         <td>Nucleus</td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>DDX21 / DDX50 / RH-Gu</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G_RH-Gu_sG_DDX21-DDX50-RH-Gu.html">DDX50<br>Gu-beta</td>
+         <td>Nucleus</td>
+         <td>Ribosome biogenesis</td>
+       </tr>
+
+       <tr>
+         <td>C.Elegans</td>
+         <td>DDX1</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G__sG_DDX1.html">CELE_Y55F3BR.1</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>DDX1</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G__sG_DDX1.html">CG9054</td>
+         <td>Nucleus</td>
+         <td>Ribosome biogenesis</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>DDX1</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G__sG_DDX1.html">Ddx1</td>
+         <td>Nucleus<br>Cytopblasm<br>Mitochondrion</td>
+         <td>pre-mRNA processing<br>Transcription</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>DDX1</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G__sG_DDX1.html">DDX1</td>
+         <td>Nucleus<br>Cytopblasm<br>Mitochondrion</td>
+         <td>pre-mRNA processing<br>Transcription</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Mak5p / DDX24</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Mak5p-DDX24.html">Mak5p<br>YBR1119</td>
+         <td>Nucleus</td>
+         <td>Ribosome biogenesis<br>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Mak5p / DDX24</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Mak5p-DDX24.html">CELE_F55F8.2</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Mak5p / DDX24</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Mak5p-DDX24.html">CG9143p</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Mak5p / DDX24</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Mak5p-DDX24.html">Ddx24</td>
+         <td>Nucleus</td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Mak5p / DDX24</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Mak5p-DDX24.html">DDX24</td>
+         <td>Nucleus</td>
+         <td></td>
+       </tr>
+
+       <tr>
+         <td>M.Musculus</td>
+         <td>DDX59</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G__sG_DDX59.html">Ddx59</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>DDX59</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G__sG_DDX59.html">DDX59</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td></td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Rok1p / DDX52</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Rok1p-DDX52.html">Rok1p<br>YGL171W</td>
+         <td>Nucleus</td>
+         <td>Ribosome biogenesis<br>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Rok1p / DDX52</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Rok1p-DDX52.html">CELE_R05D11.4</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Rok1p / DDX52</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Rok1p-DDX52.html">CG5589</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Rok1p / DDX52</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Rok1p-DDX52.html">Ddx52</td>
+         <td>Nucleus</td>
+         <td>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Rok1p / DDX52</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Rok1p-DDX52.html">DDX52</td>
+         <td>Nucleus</td>
+         <td>rRNA processing</td>
+       </tr>
+
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>DDX28</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G__sG_DDX28.html">CG3561</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>DDX28</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G__sG_DDX28.html">Ddx28</td>
+         <td>Nucleus<br>Mitochondrion</td>
+         <td>Mitochondrial RNA processing<br>Mitochondrial ribosome biogenesis</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>DDX28</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G__sG_DDX28.html">DDX28</td>
+         <td>Nucleus<br>Mitochondrion</td>
+         <td>Mitochondrial RNA processing<br>Mitochondrial ribosome biogenesis</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Mss116p</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Mss116p.html">Mss116<br>YDR194C</td>
+         <td>Mitochondrion</td>
+         <td>Mitochondrial RNA processing<br>Mitochondrial ribosome biogenesis</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Mrh4p</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_dead/D_Eukaryota_F_DEAD-box_G__sG_Mrh4p.html">Mrh4p<br>YGL064C</td>
+         <td>Mitochondrion</td>
+         <td>Mitochondrial RNA processing</td>
+       </tr>
+
+       <tr>
+         <td>B.Subtilis</td>
+         <td>YdbR / CsdA</td>
+         <td><a href="https://rnahelicasedb.github.io/bac_dead/D_Bacteria_F_DEAD-box_G__sG_.html">YdbR</td>
+         <td></td>
+         <td>Ribosomal large subunit assembly<br>RNA catabolic process</td>
+       </tr>
+       <tr>
+         <td>E.Coli</td>
+         <td>YdbR / CsdA</td>
+         <td><a href="https://rnahelicasedb.github.io/bac_dead/D_Bacteria_F_DEAD-box_G__sG_.html">CsdA</td>
+         <td></td>
+         <td>Ribosomal large subunit assembly<br>RNA catabolic process</td>
+       </tr>
+       <tr>
+         <td>B.Subtilis</td>
+         <td>YxiN / DbpA</td>
+         <td><a href="https://rnahelicasedb.github.io/bac_dead/D_Bacteria_F_DEAD-box_G__sG_.html">YxiN</td>
+         <td></td>
+         <td>Ribosomal large subunit assembly</td>
+       </tr>
+       <tr>
+         <td>E.Coli</td>
+         <td>YxiN / DbpA</td>
+         <td><a href="https://rnahelicasedb.github.io/bac_dead/D_Bacteria_F_DEAD-box_G__sG_.html">DbpA</td>
+         <td></td>
+         <td>Ribosomal large subunit assembly</td>
+       </tr>
+       <tr>
+         <td>E.Coli</td>
+         <td></td>
+         <td><a href="https://rnahelicasedb.github.io/bac_dead/D_Bacteria_F_DEAD-box_G__sG_.html">RhlB</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>E.Coli</td>
+         <td></td>
+         <td><a href="https://rnahelicasedb.github.io/bac_dead/D_Bacteria_F_DEAD-box_G__sG_.html">RhlE</td>
+         <td></td>
+         <td>Ribosome assembly</td>
+       </tr>
+       <tr>
+         <td>E.coli</td>
+         <td></td>
+         <td><a href="https://rnahelicasedb.github.io/bac_dead/D_Bacteria_F_DEAD-box_G__sG_.html">SrmB</td>
+         <td></td>
+         <td>Ribosomal large subunit assembly</td>
+       </tr>
+       <tr>
+         <td>B.Subtilis</td>
+         <td></td>
+         <td><a href="https://rnahelicasedb.github.io/bac_dead/D_Bacteria_F_DEAD-box_G__sG_.html">YfmL</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>B.Subtilis</td>
+         <td></td>
+         <td><a href="https://rnahelicasedb.github.io/bac_dead/D_Bacteria_F_DEAD-box_G__sG_.html">YqfR</td>
+         <td></td>
+         <td>Ribosome biogenesis</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Prp2p / DHX16</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_Spliceosomal-DEAH_sG_Prp2p-DHX16.html">Prp2p<br>YNR011C</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Prp2p / DHX16</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_Spliceosomal-DEAH_sG_Prp2p-DHX16.html">DHX16<br>mog-4</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Prp2p / DHX16</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_Spliceosomal-DEAH_sG_Prp2p-DHX16.html">CG10689</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Prp2p / DHX16</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_Spliceosomal-DEAH_sG_Prp2p-DHX16.html">Dhx16</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Prp2p / DHX16</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_Spliceosomal-DEAH_sG_Prp2p-DHX16.html">DHX16</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Prp16p / DHX38</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_Spliceosomal-DEAH_sG_Prp16p-DHX38.html">Prp16<br>YKR086W</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Prp16p / DHX38</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_Spliceosomal-DEAH_sG_Prp16p-DHX38.html">Mog-1</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Prp16p / DHX38</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_Spliceosomal-DEAH_sG_Prp16p-DHX38.html">CG32604</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Prp16p / DHX38</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_Spliceosomal-DEAH_sG_Prp16p-DHX38.html">Ddx38</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Prp16p / DHX38</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_Spliceosomal-DEAH_sG_Prp16p-DHX38.html">DDX38<br>PRP16</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Prp22p / DHX8</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_Spliceosomal-DEAH_sG_Prp22p-DHX8.html">Prp22p<br>YER013W</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Prp22p / DHX8</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_Spliceosomal-DEAH_sG_Prp22p-DHX8.html">mog-5</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Prp22p / DHX8</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_Spliceosomal-DEAH_sG_Prp22p-DHX8.html">CG8241</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Prp22p / DHX8</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_Spliceosomal-DEAH_sG_Prp22p-DHX8.html">Dhx8</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Prp22p / DHX8</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_Spliceosomal-DEAH_sG_Prp22p-DHX8.html">DHX8<br>HRH1</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Prp43p / DHX15</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_Spliceosomal-DEAH_sG_Prp43p-DHX15.html">Prp43p<br>YGL120C</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Prp43p / DHX15</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_Spliceosomal-DEAH_sG_Prp43p-DHX15.html">F56D2.6</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Prp43p / DHX15</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_Spliceosomal-DEAH_sG_Prp43p-DHX15.html">CG11107</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Prp43p / DHX15</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_Spliceosomal-DEAH_sG_Prp43p-DHX15.html">Dhx15</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing<br>Ribosome biogenesis</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Prp43p / DHX15</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_Spliceosomal-DEAH_sG_Prp43p-DHX15.html">DHX15</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing<br>Ribosome biogenesis</td>
+       </tr>
+
+       <tr>
+         <td>C.Elegans</td>
+         <td>DHX35</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_Spliceosomal-DEAH_sG_DHX35.html">DHX35</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>DHX35</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_Spliceosomal-DEAH_sG_DHX35.html">CG3225</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>DHX35</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_Spliceosomal-DEAH_sG_DHX35.html">Dhx35</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>DHX35</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_Spliceosomal-DEAH_sG_DHX35.html">DHX35</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+
+       <tr>
+         <td>C.Elegans</td>
+         <td>RNA-helicase-A / DHX9</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_RHA-Group_sG_RNA-helicase-A-DHX9.html">DHX9<br>RHA1</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>pre-mRNA splicing<br>RNA export<br>RNA-mediated gene silencing<br>Transcription<br>Translation</td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>RNA-helicase-A / DHX9</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_RHA-Group_sG_RNA-helicase-A-DHX9.html">MLE<br>CG11680</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing<br>Transcription<br>Translation</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>RNA-helicase-A / DHX9</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_RHA-Group_sG_RNA-helicase-A-DHX9.html">Dhx9<br>mHEL-5 / NDH2</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>pre-mRNA splicing<br>RNA export<br>RNA-mediated gene silencing<br>Transcription<br>Translation</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>RNA-helicase-A / DHX9</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_RHA-Group_sG_RNA-helicase-A-DHX9.html">DHX9<br>LKP, NDH2</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>pre-mRNA splicing<br>RNA export<br>RNA-mediated gene silencing<br>Transcription<br>Translation</td>
+       </tr>
+       <tr>
+         <td>B.Taurus</td>
+         <td>RNA-helicase-A / DHX9</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_RHA-Group_sG_RNA-helicase-A-DHX9.html">DHX9<br>NDH2</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>pre-mRNA splicing<br>RNA export<br>RNA-mediated gene silencing<br>Transcription<br>Translation</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>DHX29</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_RHA-Group_sG_DHX29.html">YLR419W</td>
+         <td>Cytoplasm</td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>DHX29</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_RHA-Group_sG_DHX29.html">CG9323</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>DHX29</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_RHA-Group_sG_DHX29.html">Dhx29</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>DHX29</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_RHA-Group_sG_DHX29.html">DHX29</td>
+         <td></td>
+         <td></td>
+       </tr>
+
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>DHX57</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_RHA-Group_sG_DHX57.html">CG1582</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>DHX57</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_RHA-Group_sG_DHX57.html">Dhx57</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>DHX57</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_RHA-Group_sG_DHX57.html">DHX57</td>
+         <td></td>
+         <td></td>
+       </tr>
+
+       <tr>
+         <td>M.Musculus</td>
+         <td>DHX36</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_RHA-Group_sG_DHX36.html">Dhx36</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>DHX36</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_RHA-Group_sG_DHX36.html">DHX36</td>
+         <td>Nucleus<br>Cytoplasm<br>Mitochondrion</td>
+         <td>RNA decay<br>Transcription<br>Translation</td>
+       </tr>
+
+       <tr>
+         <td>M.Musculus</td>
+         <td>DHX30</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_RHA-Group_sG_DHX30.html">Dhx30</td>
+         <td>Cytoplasm<br>Mitochondrion</td>
+         <td>Ribosome biogenesis</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>DHX30</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G_RHA-Group_sG_DHX30.html">DHX30</td>
+         <td>Cytoplasm<br>Mitochondrion</td>
+         <td>Ribosome biogenesis<br>RNA decay</td>
+       </tr>
+
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>DHX33</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G__sG_DHX33.html">CG4901</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>DHX33</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G__sG_DHX33.html">Dhx33</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>DHX33</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G__sG_DHX33.html">DHX33</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td></td>
+       </tr>
+
+       <tr>
+         <td>M.Musculus</td>
+         <td>DHX40</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G__sG_DHX40.html">Dhx40</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>DHX40</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G__sG_DHX40.html">DHX40</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>DHX37</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G__sG_DHX37.html">Dhr1p<br>ECM16, YMR128W</td>
+         <td>Nucleus</td>
+         <td>Ribosome biogenesis<br>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>DHX37</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G__sG_DHX37.html">RHA-2</td>
+         <td>Nucleus</td>
+         <td>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>DHX37</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G__sG_DHX37.html">KURZ<br>CG3228</td>
+         <td>Nucleus</td>
+         <td>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>DHX37</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G__sG_DHX37.html">Dhx37</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>DHX37</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G__sG_DHX37.html">DHX37</td>
+         <td>Nucleus</td>
+         <td>rRNA processing</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>DHX32</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G__sG_DHX32.html">Dhr2p<br>YKL078W</td>
+         <td>Nucleus</td>
+         <td>Ribosome biogenesis<br>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>DHX32</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G__sG_DHX32.html">Dhx32</td>
+         <td>Nucleus<br>Mitochondrion</td>
+         <td>Mitochondrial RNA processing</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>DHX32</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G__sG_DHX32.html">DHX32</td>
+         <td>Nucleus<br>Mitochondrion</td>
+         <td>Mitochondrial RNA processing</td>
+       </tr>
+
+       <tr>
+         <td>C.Elegans</td>
+         <td>DHX34</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G__sG_DHX34.html">smgl-2<br>CELE_Y37E11AM.1</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>DHX34</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G__sG_DHX34.html">CG32533 / mRpS14</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>DHX34</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G__sG_DHX34.html">Dhx34</td>
+         <td></td>
+         <td>RNA decay</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>DHX34</td>
+         <td><a href="https://rnahelicasedb.github.io/euk_deah/D_Eukaryota_F_DEAH-RHA_G__sG_DHX34.html">DHX34</td>
+         <td></td>
+         <td>RNA decay</td>
+       </tr>
+
+       <tr>
+         <td>E.Coli</td>
+         <td></td>
+         <td><a href="https://rnahelicasedb.github.io/bac_deah/D_Bacteria_F_DEAH-RHA_G__sG_.html">HrpA</td>
+         <td></td>
+         <td>mRNA processing</td>
+       </tr>
+       <tr>
+         <td>E.coli</td>
+         <td></td>
+         <td><a href="https://rnahelicasedb.github.io/bac_deah/D_Bacteria_F_DEAH-RHA_G__sG_.html">HrpB</td>
+         <td></td>
+         <td></td>
+       </tr>
+
+       <tr>
+         <td>C.Elegans</td>
+         <td>RIG-I / DHX58 / MDA5</td>
+         <td><a href="https://rnahelicasedb.github.io/rig_dexh/D_Eukaryota_F_RIG-I-Like-DExH_G__sG_RIG-I-DHX58-MDA5.html">Drh-1</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>RIG-I / DHX58 / MDA5</td>
+         <td><a href="https://rnahelicasedb.github.io/rig_dexh/D_Eukaryota_F_RIG-I-Like-DExH_G__sG_RIG-I-DHX58-MDA5.html">RIG-I<br>DHX58</td>
+         <td>Cytoplasm<br>Tight junction</td>
+         <td>Pattern recognition receptor of the innate immune system</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>RIG-I / DHX58 / MDA5</td>
+         <td><a href="https://rnahelicasedb.github.io/rig_dexh/D_Eukaryota_F_RIG-I-Like-DExH_G__sG_RIG-I-DHX58-MDA5.html">RIG-I<br>DHX58</td>
+         <td>Cytoplasm<br>Cytoskeleton<br>Cell membrane<br>Tight junction</td>
+         <td>Pattern recognition receptor of the innate immune system</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>RIG-I / DHX58 / MDA5</td>
+         <td><a href="https://rnahelicasedb.github.io/rig_dexh/D_Eukaryota_F_RIG-I-Like-DExH_G__sG_RIG-I-DHX58-MDA5.html">MDA5<br>Ifih1</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>Pattern recognition receptor of the innate immune system</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>RIG-I / DHX58 / MDA5</td>
+         <td><a href="https://rnahelicasedb.github.io/rig_dexh/D_Eukaryota_F_RIG-I-Like-DExH_G__sG_RIG-I-DHX58-MDA5.html">MDA5<br>IFIH1</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>Pattern recognition receptor of the innate immune system</td>
+       </tr>
+
+       <tr>
+         <td>M.Musculus</td>
+         <td>LGP2</td>
+         <td><a href="https://rnahelicasedb.github.io/rig_dexh/D_Eukaryota_F_RIG-I-Like-DExH_G__sG_LGP2.html">Lgp2</td>
+         <td>Cytoplasm</td>
+         <td>Inate immune system</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>LGP2</td>
+         <td><a href="https://rnahelicasedb.github.io/rig_dexh/D_Eukaryota_F_RIG-I-Like-DExH_G__sG_LGP2.html">LGP2</td>
+         <td>Cytoplasm</td>
+         <td>Inate immune system</td>
+       </tr>
+
+       <tr>
+         <td>C.Elegans</td>
+         <td>Dicer</td>
+         <td><a href="https://rnahelicasedb.github.io/rig_dexh/D_Eukaryota_F_RIG-I-Like-DExH_G__sG_Dicer.html">Dicer1<br>K12H4.8</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>miRNA processing</td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Dicer</td>
+         <td><a href="https://rnahelicasedb.github.io/rig_dexh/D_Eukaryota_F_RIG-I-Like-DExH_G__sG_Dicer.html">Dicer1<br>CG4792</td>
+         <td></td>
+         <td>miRNA processing</td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Dicer</td>
+         <td><a href="https://rnahelicasedb.github.io/rig_dexh/D_Eukaryota_F_RIG-I-Like-DExH_G__sG_Dicer.html">Dicer2<br>CG6493</td>
+         <td></td>
+         <td>miRNA processing</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Dicer</td>
+         <td><a href="https://rnahelicasedb.github.io/rig_dexh/D_Eukaryota_F_RIG-I-Like-DExH_G__sG_Dicer.html">Dicer1</td>
+         <td>Cytoplasm</td>
+         <td>miRNA processing</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Dicer</td>
+         <td><a href="https://rnahelicasedb.github.io/rig_dexh/D_Eukaryota_F_RIG-I-Like-DExH_G__sG_Dicer.html">DICER1</td>
+         <td>Cytoplasm</td>
+         <td>miRNA processing</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>FancM</td>
+         <td><a href="https://rnahelicasedb.github.io/rig_dexh/D_Eukaryota_F_RIG-I-Like-DExH_G__sG_FancM.html">MPH1p</td>
+         <td>Nucleus</td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>FancM</td>
+         <td><a href="https://rnahelicasedb.github.io/rig_dexh/D_Eukaryota_F_RIG-I-Like-DExH_G__sG_FancM.html">CG7922</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>FancM</td>
+         <td><a href="https://rnahelicasedb.github.io/rig_dexh/D_Eukaryota_F_RIG-I-Like-DExH_G__sG_FancM.html">FancM</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>FancM</td>
+         <td><a href="https://rnahelicasedb.github.io/rig_dexh/D_Eukaryota_F_RIG-I-Like-DExH_G__sG_FancM.html">FANCM</td>
+         <td>Nucleus</td>
+         <td>DNA repair</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Ski2p / Mtr4p</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G_Ski2_sG_Ski2p-Mtr4p.html">Ski2p<br>YLR398C</td>
+         <td>Cytoplasm</td>
+         <td>Cytoplasmic RNA decay</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Ski2p / Mtr4p</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G_Ski2_sG_Ski2p-Mtr4p.html">CELE_F01G4.3</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Ski2p / Mtr4p</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G_Ski2_sG_Ski2p-Mtr4p.html">Ski2<br>CG10210</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Ski2p / Mtr4p</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G_Ski2_sG_Ski2p-Mtr4p.html">Skiv2l</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Ski2p / Mtr4p</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G_Ski2_sG_Ski2p-Mtr4p.html">SKIV2L<br>SKI2W</td>
+         <td>Nucleus<br>Cytoplasm</td>
+         <td>RNA decay</td>
+       </tr>
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Ski2p / Mtr4p</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G_Ski2_sG_Ski2p-Mtr4p.html">Mtr4p<br>YJL050W</td>
+         <td>Nucleus</td>
+         <td>Nuclear RNA decay<br>Ribosome biogenesis</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Ski2p / Mtr4p</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G_Ski2_sG_Ski2p-Mtr4p.html">Mtr4</td>
+         <td>Nucleus</td>
+         <td>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Ski2p / Mtr4p</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G_Ski2_sG_Ski2p-Mtr4p.html">CG4152</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Ski2p / Mtr4p</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G_Ski2_sG_Ski2p-Mtr4p.html">SK2L2<br>SkiV2l2</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA procesing<br>rRNA processing</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Ski2p / Mtr4p</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G_Ski2_sG_Ski2p-Mtr4p.html">SK2L2<br>SKIV2L2</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA procesing<br>rRNA processing</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Brr2 / Slh1</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G_Brr2_sG_Brr2-Slh1.html">Slh1p<br>YGR271W</td>
+         <td>Nucleus</td>
+         <td>DNA repair</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Brr2 / Slh1</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G_Brr2_sG_Brr2-Slh1.html">CELE_Y54E2A.4</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Brr2 / Slh1</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G_Brr2_sG_Brr2-Slh1.html">CG5205</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Brr2 / Slh1</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G_Brr2_sG_Brr2-Slh1.html">Ascc3</td>
+         <td>Nucleus</td>
+         <td>DNA repair<br>Transcription</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Brr2 / Slh1</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G_Brr2_sG_Brr2-Slh1.html">ASCC3<br>HELC1</td>
+         <td>Nucleus</td>
+         <td>mRNA splicing<br>DNA repair<br>Transcription</td>
+       </tr>
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Brr2 / Slh1</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G_Brr2_sG_Brr2-Slh1.html">Brr2p<br>YER172C</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Brr2 / Slh1</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G_Brr2_sG_Brr2-Slh1.html">Y46G5A.4</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Brr2 / Slh1</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G_Brr2_sG_Brr2-Slh1.html">CG5931</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Brr2 / Slh1</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G_Brr2_sG_Brr2-Slh1.html">Snrnp200</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Brr2 / Slh1</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G_Brr2_sG_Brr2-Slh1.html">SNRNP200, ASCC3L1<br>U5-200KD</td>
+         <td>Nucleus</td>
+         <td>pre-mRNA splicing</td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Hfm1p</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G__sG_Hfm1p.html">Hfm1p<br>YGL251C, MER3</td>
+         <td>Nucleus</td>
+         <td>DNA recombination</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Hfm1p</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G__sG_Hfm1p.html">HFM1<br>SEC3D1</td>
+         <td></td>
+         <td>DNA recombination</td>
+       </tr>
+
+       <tr>
+         <td>C.Elegans</td>
+         <td>Hel308</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G__sG_Hel308.html">CELE_Y55B1AL.3</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Hel308</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G__sG_Hel308.html">CG7972</td>
+         <td></td>
+         <td>DNA repair<br>DNA recombination</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Hel308</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G__sG_Hel308.html">Hel308</td>
+         <td></td>
+         <td>DNA repair</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Hel308</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G__sG_Hel308.html">HEL308</td>
+         <td></td>
+         <td>DNA repair</td>
+       </tr>
+
+       <tr>
+         <td>C.Elegans</td>
+         <td>DHX60</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G__sG_DHX60.html">C28H8.3</td>
+         <td>Nucleus</td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>DHX60</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G__sG_DHX60.html">Dhx60</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>DHX60</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G__sG_DHX60.html">DHX60</td>
+         <td>Cytoplasm</td>
+         <td></td>
+       </tr>
+
+       <tr>
+         <td>S.Cerevisiae</td>
+         <td>Suv3p</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G__sG_Suv3p.html">Suv3p<br>YPL029W</td>
+         <td>Mitochondrion</td>
+         <td>Mitochondrial RNA processing</td>
+       </tr>
+       <tr>
+         <td>C.Elegans</td>
+         <td>Suv3p</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G__sG_Suv3p.html">Suv3<br>C08F8.2</td>
+         <td>Nucleus<br>Mitochondrion</td>
+         <td>Mitochondrial RNA processing</td>
+       </tr>
+       <tr>
+         <td>D.Melanogaster</td>
+         <td>Suv3p</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G__sG_Suv3p.html">Suv3<br>CG9791</td>
+         <td>Mitochondrion</td>
+         <td>Mitochondrial RNA processing</td>
+       </tr>
+       <tr>
+         <td>M.Musculus</td>
+         <td>Suv3p</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G__sG_Suv3p.html">Supv3l1</td>
+         <td>Nucleus<br>Mitochondrion</td>
+         <td>Mitochondrial RNA processing</td>
+       </tr>
+       <tr>
+         <td>H.Sapiens</td>
+         <td>Suv3p</td>
+         <td><a href="https://rnahelicasedb.github.io/ski2_dexh/D_Eukaryota_F_Ski2-like-DExH_G__sG_Suv3p.html">SUPV3L1</td>
+         <td>Nucleus<br>Mitochondrion</td>
+         <td>Mitochondrial RNA processing</td>
+       </tr>
+
+       <tr>
+         <td>Vaccinia Virus (Poxviridae)</td>
+         <td>Viral DExH</td>
+         <td><a href="https://rnahelicasedb.github.io/viral_dexh/D_Viruses_F_Viral-DExH_G_Poxviridae_sG_Poxviridae.html">NPH-II<br>CVA083</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>Variola Virus (Poxviridae)</td>
+         <td>Viral DExH</td>
+         <td><a href="https://rnahelicasedb.github.io/viral_dexh/D_Viruses_F_Viral-DExH_G_Poxviridae_sG_Poxviridae.html">NPH-II</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>Fowlpox Virus (Poxviridae)</td>
+         <td>Viral DExH</td>
+         <td><a href="https://rnahelicasedb.github.io/viral_dexh/D_Viruses_F_Viral-DExH_G_Poxviridae_sG_Poxviridae.html">NTP2</td>
+         <td></td>
+         <td></td>
+       </tr>
+
+       <tr>
+         <td>Yellow Fever Virus (Flaviviridae)</td>
+         <td>Viral DExH</td>
+         <td><a href="https://rnahelicasedb.github.io/viral_dexh/D_Viruses_F_Viral-DExH_G_Flaviviridae_sG_Flaviviridae.html">NS3h<br>CVA083</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>Dengue Fever Virus (Flaviviridae)</td>
+         <td>Viral DExH</td>
+         <td><a href="https://rnahelicasedb.github.io/viral_dexh/D_Viruses_F_Viral-DExH_G_Flaviviridae_sG_Flaviviridae.html">NS3h</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>Hepatitis C Virus (Flaviviridae*)</td>
+         <td>Viral DExH</td>
+         <td><a href="https://rnahelicasedb.github.io/viral_dexh/D_Viruses_F_Viral-DExH_G_Flaviviridae_sG_Flaviviridae.html">NS3h</td>
+         <td></td>
+         <td></td>
+       </tr>
+
+       <tr>
+         <td>Plum-pox Virus (Potyviridae)</td>
+         <td>Viral DExH</td>
+         <td><a href="https://rnahelicasedb.github.io/viral_dexh/D_Viruses_F_Viral-DExH_G_Potyviridae_sG_Potyviridae.html">CI<br>(Cytoplasmic inclusion protein)</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>Lily-motle Virus (Potyviridae)</td>
+         <td>Viral DExH</td>
+         <td><a href="https://rnahelicasedb.github.io/viral_dexh/D_Viruses_F_Viral-DExH_G_Potyviridae_sG_Potyviridae.html">CI<br>(Cytoplasmic inclusion protein)</td>
+         <td></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>Turnip-Mosaic Virus (Potyviridae)</td>
+         <td>Viral DExH</td>
+         <td><a href="https://rnahelicasedb.github.io/viral_dexh/D_Viruses_F_Viral-DExH_G_Potyviridae_sG_Potyviridae.html">CI<br>(Cytoplasmic inclusion protein)</td>
+         <td></td>
+         <td></td>
+       </tr>
+
+     </tbody>
+    </table>
+
+    <script>
+      //Get the button
+      var mybutton = document.getElementById("myBtn");
+
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+
+  </body>
+  <footer align="center"><br>© 2020 The RNA Helicase Database All Rights Reserved</footer>
+</html>
