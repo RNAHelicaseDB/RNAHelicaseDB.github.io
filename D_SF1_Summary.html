@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>The RNA Helicase Database - Eukaryotic DEAD-box proteins</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      table, th, td {
+        table-layout: fixed;
+        border-width: 1px;
+        border-color: #000000;
+        border-style: solid;
+        font-family: arial;
+      }
+      table {
+        border-collapse: collapse;
+        position: relative;
+      }
+      th {
+        height: 50px;
+        background-color: #CFD4B3;
+        font-family: arial;
+        position: sticky;
+        top: 0;
+      }
+      #group {
+        background-color: #EBEBEB;
+      }
+      #proteinname {
+        padding: 10px;
+        background-color: #F8FFFF;
+      }
+      #noprotein {
+        background-color: #FFFFE1;
+      }
+      a {
+        text-decoration: none;
+      }
+      p {
+        font-family: arial;
+      }
+      h1 {
+        font-family: arial;
+        font-size: 20px;
+        font-weight: bold;
+        color: LightSeaGreen;
+      }
+      #myBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: red;
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 4px;
+      }
+
+      #myBtn:hover {
+        background-color: #555;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <h1>Eukaryotic DEAD-box Proteins</h1>
+    <table style = "width:100%">
+      <tr>
+        <th style = "width: 150px" >Group</th>
+        <th style = "width: 150px" >Yeast</th>
+        <th style = "width: 150px" >Human</th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_transcr.png" alt = "transcription" style = "width:90px;height:90px"/></th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_splic.png" alt = "pre-mRNA splicing" style = "width:90px;height:90px"/></th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_exp.png" alt = "RNA export" style = "width:90px;height:90px"/></th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_trans.png" alt = "Translation" style = "width:90px;height:90px"/></th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_dcy.png" alt = "RNA decay" style = "width:90px;height:90px"/></th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_rbb.png" alt = "Ribosome biogenesis" style = "width:90px;height:90px"/></th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_mtc.png" alt = "Mitochondrial RNA processing" style = "width:90px;height:90px"/></th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_oth.png" alt ="other functions" style = "width:90px;height:90px"/></th>
+      </tr>
+      <!-- SEN1/SETX -->
+      <tr>
+        <td align="middle" rowspan = "1" id = "group"><b>SEN1/SETX</b></th>
+        <td align="middle" id = "proteinname"><a href="sf1_helicase/Sen1_STX.html">Sen1p</td>
+        <td align="middle" id = "proteinname"><a href="sf1_helicase/Sen1_STX.html">SETX</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <!-- ZNFX1/IBP160 -->
+      <tr>
+        <td align="middle" rowspan = "1" id = "group"><b>ZNFX1/IBP160</b></th>
+        <td align="middle" id = "proteinname"><a href="sf1_helicase/ZNFX1_IBP160.html"></td>
+        <td align="middle" id = "proteinname"><a href="sf1_helicase/ZNFX1_IBP160.html">ZNFX1/IBP160</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <!-- UPF1 -->
+      <tr>
+        <td align="middle" rowspan = "1" id = "group"><b>UPF1</b></th>
+        <td align="middle" id = "proteinname"><a href="sf1_helicase/Upf1.html">Upf1p</td>
+        <td align="middle" id = "proteinname"><a href="sf1_helicase/Upf1.html">UPF1</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <!-- HCS1/IGHMBP2 -->
+      <tr>
+        <td align="middle" rowspan = "1" id = "group"><b>HCS1/IGHMBP2</b></th>
+        <td align="middle" id = "proteinname"><a href="sf1_helicase/Hcs1_IGHMBP2.html">Hcs1p</td>
+        <td align="middle" id = "proteinname"><a href="sf1_helicase/Hcs1_IGHMBP2.html">IGHMBP2</td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <!-- DNA2 -->
+      <tr>
+        <td align="middle" rowspan = "1" id = "group"><b>DNA2</b></th>
+        <td align="middle" id = "proteinname"><a href="sf1_helicase/DNA2.html">Dna2p</td>
+        <td align="middle" id = "proteinname"><a href="sf1_helicase/DNA2.html">DNA2</td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <!-- DNA2 -->
+      <tr>
+        <td align="middle" rowspan = "1" id = "group"><b>MTT1p<br>/MOV10<br>/HELZ</b></th>
+        <td align="middle" id = "proteinname"><a href="sf1_helicase/Mtt1p_MOV10_HELZ.html">Mtt1p</td>
+        <td align="middle" id = "proteinname"><a href="sf1_helicase/Mtt1p_MOV10_HELZ.html">MOV10<br>/MOV10L<br>/HELZ<br>/PR285</td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerN.png" style = "width:50px;height:50px"/></td>
+        <td align="middle"><img src="images/markerP.png" style = "width:50px;height:50px"/></td>
+      </tr>
+      <tr>
+        <th style = "width: 80px" >Group</th>
+        <th style = "width: 150px" >Yeast</th>
+        <th style = "width: 150px" >Human</th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_transcr.png" alt = "transcription" style = "width:90px;height:90px"/></th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_splic.png" alt = "pre-mRNA splicing" style = "width:90px;height:90px"/></th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_exp.png" alt = "RNA export" style = "width:90px;height:90px"/></th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_trans.png" alt = "Translation" style = "width:90px;height:90px"/></th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_dcy.png" alt = "RNA decay" style = "width:90px;height:90px"/></th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_rbb.png" alt = "Ribosome biogenesis" style = "width:90px;height:90px"/></th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_mtc.png" alt = "Mitochondrial RNA processing" style = "width:90px;height:90px"/></th>
+        <th  class = "tableimg noborder"><img src = "images/tbl_oth.png" alt ="other functions" style = "width:90px;height:90px"/></th>
+      </tr>
+    </table>
+    <script>
+    //Get the button
+    var mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
+  </body>
+  <footer align="center"><br>© 2020 The RNA Helicase Database All Rights Reserved</footer>
+</html>
