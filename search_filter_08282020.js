@@ -1,9 +1,13 @@
 //
+//  note to futyre self (or whoevers gonna work on this in the future):
 //  BEWARE!!
 //  This is exteremely raw and brute-force approach.
 //  0 elegancy in coding whatsoever, but it does the job.
-//  one could make function that looks at 32 binary-coded state....
-//  but I'm just gonna do it this way because this will work and probably take less time for debugging.
+//  what this does is, basically designate binary code to each column.
+//  (00000 means nothing is being searched, 11111 means every column is being searched, 10001, means first and last column are being searched, etc..)
+//  and basically treat each and every binary states (2^5 states) separately.
+//  adding new column means additional power added to the binary states (2^6, 64 states)....
+//  but I'm just gonna do it this way because this will work and probably take less time for me to learn javascript.
 //
 //
 $(document).ready(function () {
